@@ -12,11 +12,13 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
@@ -31,47 +33,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <HBox fx:id="top_bar" prefHeight="100.0" prefWidth="1440.0">
+      <VBox layoutY="66.0" prefHeight="1934.0" prefWidth="1440.0">
          <children>
-            <JFXHamburger fx:id="ham_menu" prefHeight="100.0" prefWidth="107.0" />
-            <Pane prefHeight="100.0" prefWidth="93.0">
-               <children>
-                  <ImageView fx:id="admin_icon" fitHeight="66.0" fitWidth="66.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icon/administrator_male_48px.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane prefHeight="100.0" prefWidth="208.0">
-               <children>
-                  <VBox layoutY="26.0" prefHeight="54.0" prefWidth="208.0">
-                     <children>
-                        <Label prefHeight="33.0" prefWidth="208.0" text="Admin">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="21.0" prefWidth="210.0" text="Designation">
-                           <font>
-                              <Font name="System Italic" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
-            </Pane>
-         </children>
-      </HBox>
-      <VBox layoutY="100.0" prefHeight="1900.0" prefWidth="1440.0">
-         <children>
-            <ScrollPane fx:id="scroll_bar" prefHeight="800.0" prefWidth="1440.0">
+            <ScrollPane fx:id="scroll_bar" prefHeight="835.0" prefWidth="1440.0">
                <content>
                 <AnchorPane fx:id="main_pane" minHeight="0.0" minWidth="0.0" prefHeight="1950.0" prefWidth="1440.0">
                      <children>
                         <HBox fx:id="bar_box" layoutX="215.0" layoutY="37.0" prefHeight="558.0" prefWidth="1171.0">
                            <children>
-                              <Pane fx:id="bar_pane" prefHeight="498.0" prefWidth="1233.0">
+                              <Pane id="make" fx:id="bar_pane" prefHeight="498.0" prefWidth="1233.0" style="-fx-background-ra: 15px;" stylesheets="@style.css">
                                  <children>
                                     <Label layoutX="39.0" layoutY="14.0" prefHeight="21.0" prefWidth="208.0" text="Monthly Anniversary ">
                                        <font>
@@ -114,7 +84,7 @@
                                     </HBox>
                                     <ProgressIndicator fx:id="emp_pro" layoutX="247.0" layoutY="53.0" prefHeight="90.0" prefWidth="131.0" progress="0.63" />
                                     <ProgressIndicator fx:id="emp_br" layoutX="974.0" layoutY="44.0" prefHeight="90.0" prefWidth="131.0" progress="0.83" />
-                                    <BarChart fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="50.0" layoutY="143.0" prefHeight="379.0" prefWidth="1073.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                    <BarChart id="mark" fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalZeroLineVisible="false" layoutX="50.0" layoutY="143.0" prefHeight="379.0" prefWidth="1073.0" stylesheets="@style.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" fx:id="x" />
                                       </xAxis>
@@ -123,12 +93,19 @@
                                       </yAxis>
                                     </BarChart>
                                  </children>
+                                 <effect>
+                                    <InnerShadow blurType="ONE_PASS_BOX" color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0">
+                                       <input>
+                                          <InnerShadow blurType="ONE_PASS_BOX" color="#dd989859" height="13.14" offsetX="-10.0" offsetY="-10.0" radius="2.785" width="0.0" />
+                                       </input>
+                                    </InnerShadow>
+                                 </effect>
                               </Pane>
                            </children>
                         </HBox>
                         <VBox fx:id="drawerbox" prefHeight="641.0" prefWidth="200.0">
                            <children>
-                              <JFXDrawer fx:id="drawer" defaultDrawerSize="220.0" overLayVisible="false" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" />
+                              <JFXDrawer fx:id="drawer" defaultDrawerSize="220.0" overLayVisible="false" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" visible="false" />
                            </children>
                            <effect>
                               <ColorAdjust />
@@ -136,9 +113,13 @@
                         </VBox>
                         <VBox layoutX="57.0" layoutY="669.0" prefHeight="284.0" prefWidth="454.0">
                            <children>
-                              <Pane fx:id="activity_pane" prefHeight="294.0" prefWidth="454.0">
+                              <Pane id="acti" fx:id="activity_pane" prefHeight="294.0" prefWidth="454.0" stylesheets="@style.css">
                                  <effect>
-                                    <DropShadow />
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
                                  </effect>
                                  <children>
                                     <HBox layoutX="27.0" layoutY="14.0" prefHeight="34.0" prefWidth="129.0">
@@ -162,22 +143,22 @@
                                        <children>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icon/increase_48px.png" />
+                                                <Image url="@../icon/Group%2061.png" />
                                              </image>
                                           </ImageView>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icon/transaction_48px.png" />
+                                                <Image url="@../icon/Group%2062.png" />
                                              </image>
                                           </ImageView>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icon/money_bag_shekel_30px.png" />
+                                                <Image url="@../icon/Group%2063.png" />
                                              </image>
                                           </ImageView>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icon/semi_truck_48px.png" />
+                                                <Image url="@../icon/Group%2064.png" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -192,21 +173,11 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <JFXSlider fx:id="slider_totalsale" prefHeight="25.0">
+                                          <ProgressBar prefHeight="18.0" prefWidth="243.0" progress="0.0">
                                              <effect>
-                                                <Glow>
-                                                   <input>
-                                                      <Lighting>
-                                                         <bumpInput>
-                                                            <Shadow />
-                                                         </bumpInput>
-                                                         <light>
-                                                            <Light.Distant />
-                                                         </light>
-                                                      </Lighting>
-                                                   </input>
-                                                </Glow>
-                                             </effect></JFXSlider>
+                                                <DropShadow color="#1179d464" height="1.0" offsetX="4.0" offsetY="6.0" radius="0.0" width="0.0" />
+                                             </effect>
+                                          </ProgressBar>
                                           <Label layoutX="10.0" layoutY="135.0" prefHeight="25.0" prefWidth="242.0" text="Income Amount">
                                              <VBox.margin>
                                                 <Insets left="10.0" />
@@ -229,7 +200,8 @@
                                                       </Lighting>
                                                    </input>
                                                 </Glow>
-                                             </effect></JFXSlider>
+                                             </effect>
+                                          </JFXSlider>
                                           <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="242.0" text="Total Budget">
                                              <VBox.margin>
                                                 <Insets left="10.0" />
@@ -252,7 +224,8 @@
                                                       </Lighting>
                                                    </input>
                                                 </Glow>
-                                             </effect></JFXSlider>
+                                             </effect>
+                                          </JFXSlider>
                                           <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="242.0" text="Completed Tasks">
                                              <VBox.margin>
                                                 <Insets left="10.0" />
@@ -275,7 +248,8 @@
                                                       </Lighting>
                                                    </input>
                                                 </Glow>
-                                             </effect></JFXSlider>
+                                             </effect>
+                                          </JFXSlider>
                                        </children>
                                     </VBox>
                                     <VBox layoutX="386.0" layoutY="68.0" prefHeight="200.0" prefWidth="54.0">
@@ -308,9 +282,13 @@
                         </VBox>
                         <HBox layoutX="558.0" layoutY="629.0" prefHeight="141.0" prefWidth="438.0">
                            <children>
-                              <Pane fx:id="profit_pane" prefHeight="209.0" prefWidth="438.0">
+                              <Pane id="pr1" fx:id="profit_pane" prefHeight="209.0" prefWidth="438.0" stylesheets="@style.css">
                                  <effect>
-                                    <DropShadow />
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
                                  </effect>
                                  <children>
                                     <HBox layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="143.0">
@@ -330,22 +308,11 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ProgressIndicator fx:id="pro_in1" layoutX="50.0" layoutY="58.0" prefHeight="80.0" prefWidth="93.0" progress="0.39" />
+                                    <ProgressIndicator fx:id="pro_in1" layoutX="39.0" layoutY="41.0" prefHeight="80.0" prefWidth="93.0" progress="0.39" />
                                     <ProgressIndicator fx:id="pro_in2" layoutX="269.0" layoutY="58.0" prefHeight="66.0" prefWidth="79.0" progress="0.57" />
-                                    <VBox layoutX="129.0" layoutY="66.0" prefHeight="66.0" prefWidth="85.0">
+                                    <VBox layoutX="134.0" layoutY="81.0" prefHeight="33.0" prefWidth="85.0">
                                        <children>
-                                          <Label prefHeight="44.0" prefWidth="85.0" text="\$11K">
-                                             <font>
-                                                <Font name="System Bold" size="24.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets left="10.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="86.0" text="2019">
-                                             <VBox.margin>
-                                                <Insets left="10.0" />
-                                             </VBox.margin>
+                                          <Label prefHeight="32.0" prefWidth="86.0" text="2019">
                                              <font>
                                                 <Font name="System Bold Italic" size="18.0" />
                                              </font>
@@ -372,16 +339,18 @@
                                           </Label>
                                        </children>
                                     </VBox>
+                                    <Label layoutX="134.0" layoutY="49.0" prefHeight="44.0" prefWidth="85.0" text="\$11K">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </Pane>
                            </children>
                         </HBox>
                         <HBox layoutX="554.0" layoutY="809.0" prefHeight="141.0" prefWidth="438.0">
                            <children>
-                              <Pane fx:id="cust_pane" prefHeight="163.0" prefWidth="440.0">
-                                 <effect>
-                                    <DropShadow />
-                                 </effect>
+                              <Pane id="tot" fx:id="cust_pane" prefHeight="163.0" prefWidth="440.0" stylesheets="@style.css">
                                  <children>
                                     <HBox layoutX="15.0" layoutY="10.0" prefHeight="27.0" prefWidth="128.0">
                                        <children>
@@ -429,14 +398,25 @@
                                       </yAxis>
                                     </BarChart>
                                  </children>
+                                 <effect>
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
+                                 </effect>
                               </Pane>
                            </children>
                         </HBox>
                         <VBox layoutX="1026.0" layoutY="621.0" prefHeight="274.0" prefWidth="384.0">
                            <children>
-                              <Pane fx:id="profit" prefHeight="294.0" prefWidth="454.0">
+                              <Pane id="tot" fx:id="profit" prefHeight="294.0" prefWidth="454.0" stylesheets="@style.css">
                                  <effect>
-                                    <DropShadow />
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
                                  </effect>
                                  <children>
                                     <LineChart fx:id="growth_rate" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="2.0" layoutY="60.0" prefHeight="214.0" prefWidth="384.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
@@ -461,10 +441,7 @@
                         </VBox>
                         <VBox layoutX="118.0" layoutY="1004.0" prefHeight="355.0" prefWidth="504.0">
                            <children>
-                              <Pane fx:id="bill_pane" prefHeight="387.0" prefWidth="504.0">
-                                 <effect>
-                                    <DropShadow />
-                                 </effect>
+                              <Pane id="tot" fx:id="bill_pane" prefHeight="387.0" prefWidth="504.0" stylesheets="@style.css">
                                  <children>
                                     <HBox layoutX="27.0" layoutY="14.0" prefHeight="34.0" prefWidth="129.0">
                                        <children>
@@ -550,14 +527,25 @@
                                     <Line endX="-119.5" endY="-90.0" layoutX="174.0" layoutY="319.0" startX="-119.5" startY="-118.0" />
                                     <Line endX="-118.0" endY="-95.0" layoutX="172.0" layoutY="247.0" startX="-118.0" startY="-124.0" />
                                  </children>
+                                 <effect>
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
+                                 </effect>
                               </Pane>
                            </children>
                         </VBox>
                         <VBox layoutX="720.0" layoutY="1012.0" prefHeight="408.0" prefWidth="632.0">
                            <children>
-                              <Pane fx:id="sales_pane" prefHeight="418.0" prefWidth="632.0">
+                              <Pane id="tot" fx:id="sales_pane" prefHeight="418.0" prefWidth="632.0" stylesheets="@style.css">
                                  <effect>
-                                    <DropShadow />
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
                                  </effect>
                                  <children>
                                     <HBox layoutX="27.0" layoutY="14.0" prefHeight="34.0" prefWidth="129.0">
@@ -710,9 +698,13 @@
                         </VBox>
                         <VBox layoutX="87.0" layoutY="1447.0" prefHeight="399.0" prefWidth="740.0">
                            <children>
-                              <Pane fx:id="task_pane" prefHeight="439.0" prefWidth="740.0">
+                              <Pane id="tot" fx:id="task_pane" prefHeight="439.0" prefWidth="740.0" stylesheets="@style.css">
                                  <effect>
-                                    <DropShadow />
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
                                  </effect>
                                  <children>
                                     <HBox layoutX="27.0" layoutY="14.0" prefHeight="41.0" prefWidth="692.0">
@@ -774,9 +766,13 @@
                         </VBox>
                         <VBox layoutX="892.0" layoutY="1481.0" prefHeight="351.0" prefWidth="501.0">
                            <children>
-                              <Pane fx:id="pie_pane" prefHeight="348.0" prefWidth="537.0">
+                              <Pane id="tot" fx:id="pie_pane" prefHeight="348.0" prefWidth="537.0" stylesheets="@style.css">
                                  <effect>
-                                    <DropShadow />
+                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                       <input>
+                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                       </input>
+                                    </InnerShadow>
                                  </effect>
                                  <children>
                                     <HBox layoutX="23.0" layoutY="15.0" prefHeight="315.0" prefWidth="495.0">
@@ -794,6 +790,33 @@
             </ScrollPane>
          </children>
       </VBox>
+      <Pane id="back" layoutY="20.0" prefHeight="68.0" prefWidth="1440.0" style="-fx-background-radius: 15px;" stylesheets="@style.css">
+         <children>
+            <JFXHamburger fx:id="ham_menu" layoutX="24.0" layoutY="12.0" prefHeight="44.0" prefWidth="60.0" />
+            <Label id="phototext1" layoutX="1216.0" layoutY="39.0" prefHeight="21.0" prefWidth="210.0" text="Designation">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label id="phototext2" layoutX="1217.0" layoutY="9.0" prefHeight="33.0" prefWidth="192.0" text="Admin">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView id="photo" fx:id="admin_icon" fitHeight="44.0" fitWidth="53.0" layoutX="1159.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/administrator_male_48px.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0">
+               <input>
+                  <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0" />
+               </input>
+            </InnerShadow>
+         </effect>
+      </Pane>
    </children>
    <effect>
       <ColorAdjust />

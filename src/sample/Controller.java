@@ -39,6 +39,7 @@ public class Controller implements Initializable {
     @FXML
     private JFXDrawer drawer;
 
+
     @FXML
     private JFXButton btn_login;
 
@@ -83,6 +84,7 @@ public class Controller implements Initializable {
         barchar1();
         custbar();
         linecahrt();
+
     }
 
     private void linecahrt() {
@@ -175,12 +177,15 @@ public class Controller implements Initializable {
         HamburgerSlideCloseTransition burgerTask = new HamburgerSlideCloseTransition(ham_menu);
         burgerTask.setRate(-1);
         ham_menu.addEventHandler(MouseEvent.MOUSE_CLICKED,(event) ->  {
+
             burgerTask.setRate(burgerTask.getRate()*-1);
                 burgerTask.play();
                  if(drawer.isClosed()){
+                     drawer.setVisible(true);
                      drawer.open();
                  }else{
                      drawer.close();
+                     drawer.setVisible(false);
                  }
 
         });
