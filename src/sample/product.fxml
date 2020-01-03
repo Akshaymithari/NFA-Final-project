@@ -58,7 +58,7 @@
          <children>
             <Pane fx:id="product_infopane" prefHeight="558.0" prefWidth="572.0">
                <children>
-                  <Spinner layoutX="56.0" layoutY="59.0" prefHeight="46.0" prefWidth="246.0">
+                  <Spinner layoutX="54.0" layoutY="93.0" prefHeight="46.0" prefWidth="246.0">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -87,12 +87,34 @@
                         <Font name="System Italic" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="btn_product_add" buttonType="RAISED" layoutX="127.0" layoutY="400.0" prefHeight="98.0" prefWidth="134.0" text="ADD">
+                  <JFXButton fx:id="btn_product_add" buttonType="RAISED" layoutX="127.0" layoutY="400.0" prefHeight="98.0" prefWidth="134.0" text="Update">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </JFXButton>
                   <JFXTextArea layoutX="52.0" layoutY="314.0" prefHeight="41.0" prefWidth="258.0" />
+                  <HBox layoutX="34.0" layoutY="10.0">
+                     <children>
+                        <ImageView fitHeight="44.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/product_documents_60px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="43.0" prefWidth="183.0" text="Product Management">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label layoutX="398.0" layoutY="208.0" prefHeight="21.0" prefWidth="77.0" text="CGST: " />
+                  <Label layoutX="399.0" layoutY="304.0" prefHeight="21.0" prefWidth="110.0" text="HSN Code : " />
+                  <Label layoutX="398.0" layoutY="237.0" prefHeight="21.0" prefWidth="77.0" text="IGST: " />
+                  <Label layoutX="398.0" layoutY="269.0" prefHeight="21.0" prefWidth="77.0" text="SGST: " />
+                  <Label layoutX="398.0" layoutY="337.0" prefHeight="21.0" prefWidth="110.0" text="Availability : " />
                </children>
                <effect>
                   <DropShadow />
@@ -107,7 +129,7 @@
                   <DropShadow />
                </effect>
                <children>
-                  <LineChart fx:id="product_rate" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="18.0" layoutY="227.0" prefHeight="480.0" prefWidth="712.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                  <LineChart fx:id="product_rate" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="18.0" layoutY="191.0" prefHeight="516.0" prefWidth="712.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
