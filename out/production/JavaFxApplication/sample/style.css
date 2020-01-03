@@ -1,11 +1,11 @@
 .root {
--fx-background-color:FFBBBB;
+-fx-background-color:#E0E5EC;
 }
 #main_pane{
--fx-background-color:FFBBBB;
+-fx-background-color:#E0E5EC;
 }
 #top_bar{
--fx-background-color:#FCF9F9;
+-fx-background-color:#E0E5EC;
 }
 #drawer{
 -fx-background-radius: 0 10 10 0;
@@ -144,23 +144,23 @@
     -fx-background-color: transparent;
 }
 #back{
--fx-background-color:FFBBBB;
+-fx-background-color:#E0E5EC;
  -fx-background-radius: 15px;
 }
 #make{
--fx-background-color:FFBBBB;
+-fx-background-color:#E0E5EC;
  -fx-background-radius: 15px;
 }
 
 #acti{
--fx-background-color:FFBBBB;
+-fx-background-color:#E0E5EC;
  -fx-background-radius: 15px;
 }
 #pr1{
--fx-background-color:FFBBBB;
+-fx-background-color:#E0E5EC;
  -fx-background-radius: 15px;
 }
 #tot{
--fx-background-color:FFBBBB;
+-fx-background-color:#E0E5EC;
  -fx-background-radius: 15px;
 }

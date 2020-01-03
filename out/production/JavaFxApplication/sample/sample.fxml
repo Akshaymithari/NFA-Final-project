@@ -84,7 +84,7 @@
                                     </HBox>
                                     <ProgressIndicator fx:id="emp_pro" layoutX="247.0" layoutY="53.0" prefHeight="90.0" prefWidth="131.0" progress="0.63" />
                                     <ProgressIndicator fx:id="emp_br" layoutX="974.0" layoutY="44.0" prefHeight="90.0" prefWidth="131.0" progress="0.83" />
-                                    <BarChart id="mark" fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalZeroLineVisible="false" layoutX="50.0" layoutY="143.0" prefHeight="379.0" prefWidth="1073.0" stylesheets="@style.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                    <BarChart id="mark" fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalZeroLineVisible="false" layoutX="49.0" layoutY="145.0" opacity="0.49" prefHeight="393.0" prefWidth="1073.0" stylesheets="@style.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" fx:id="x" />
                                       </xAxis>
@@ -94,9 +94,9 @@
                                     </BarChart>
                                  </children>
                                  <effect>
-                                    <InnerShadow blurType="ONE_PASS_BOX" color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0">
+                                    <InnerShadow blurType="ONE_PASS_BOX" color="WHITE" height="20.79" offsetX="10.0" offsetY="10.0" radius="9.6975" width="20.0">
                                        <input>
-                                          <InnerShadow blurType="ONE_PASS_BOX" color="#dd989859" height="13.14" offsetX="-10.0" offsetY="-10.0" radius="2.785" width="0.0" />
+                                          <InnerShadow blurType="ONE_PASS_BOX" color="#a3b1c659" height="3.285" offsetX="-10.0" offsetY="-10.0" radius="0.32125000000000004" width="0.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -115,9 +115,9 @@
                            <children>
                               <Pane id="acti" fx:id="activity_pane" prefHeight="294.0" prefWidth="454.0" stylesheets="@style.css">
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="1.65" offsetX="-10.0" offsetY="-10.0" radius="0.0" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="20.79" offsetX="10.0" offsetY="10.0" radius="9.6975" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -284,9 +284,9 @@
                            <children>
                               <Pane id="pr1" fx:id="profit_pane" prefHeight="209.0" prefWidth="438.0" stylesheets="@style.css">
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="3.29" offsetX="-10.0" offsetY="-10.0" radius="0.3225" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="21.57" offsetX="10.0" offsetY="10.0" radius="9.8925" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -399,9 +399,9 @@
                                     </BarChart>
                                  </children>
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="3.29" offsetX="-10.0" offsetY="-10.0" radius="0.3225" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="21.57" offsetX="10.0" offsetY="10.0" radius="9.8925" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -412,9 +412,9 @@
                            <children>
                               <Pane id="tot" fx:id="profit" prefHeight="294.0" prefWidth="454.0" stylesheets="@style.css">
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="3.29" offsetX="-10.0" offsetY="-10.0" radius="0.3225" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="21.57" offsetX="10.0" offsetY="10.0" radius="9.8925" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -528,9 +528,9 @@
                                     <Line endX="-118.0" endY="-95.0" layoutX="172.0" layoutY="247.0" startX="-118.0" startY="-124.0" />
                                  </children>
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="3.29" offsetX="-10.0" offsetY="-10.0" radius="0.3225" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="21.57" offsetX="10.0" offsetY="10.0" radius="9.8925" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -541,9 +541,9 @@
                            <children>
                               <Pane id="tot" fx:id="sales_pane" prefHeight="418.0" prefWidth="632.0" stylesheets="@style.css">
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="3.29" offsetX="-10.0" offsetY="-10.0" radius="0.3225" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="21.57" offsetX="10.0" offsetY="10.0" radius="9.8925" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -700,9 +700,9 @@
                            <children>
                               <Pane id="tot" fx:id="task_pane" prefHeight="439.0" prefWidth="740.0" stylesheets="@style.css">
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="3.29" offsetX="-10.0" offsetY="-10.0" radius="0.3225" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="21.57" offsetX="10.0" offsetY="10.0" radius="9.8925" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -768,9 +768,9 @@
                            <children>
                               <Pane id="tot" fx:id="pie_pane" prefHeight="348.0" prefWidth="537.0" stylesheets="@style.css">
                                  <effect>
-                                    <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0">
+                                    <InnerShadow color="#a3b1c659" height="3.29" offsetX="-10.0" offsetY="-10.0" radius="0.3225" width="0.0">
                                        <input>
-                                          <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0" />
+                                          <InnerShadow color="WHITE" height="21.57" offsetX="10.0" offsetY="10.0" radius="9.8925" width="20.0" />
                                        </input>
                                     </InnerShadow>
                                  </effect>
@@ -810,9 +810,9 @@
             </ImageView>
          </children>
          <effect>
-            <InnerShadow color="#fcaeae" height="23.14" offsetX="10.0" offsetY="10.0" radius="10.285" width="20.0">
+            <InnerShadow color="WHITE" height="15.33" offsetX="4.0" offsetY="4.0" radius="10.745" width="29.65">
                <input>
-                  <InnerShadow color="#db979759" height="6.57" offsetX="-10.0" offsetY="-10.0" radius="1.1425" width="0.0" />
+                  <InnerShadow color="#a3b1c659" height="1.0" offsetX="-4.0" offsetY="-4.0" radius="0.0" width="0.0" />
                </input>
             </InnerShadow>
          </effect>
