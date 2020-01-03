@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="product" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox layoutX="43.0" layoutY="38.0" prefHeight="83.0" prefWidth="345.0">
+         <children>
+            <ImageView fitHeight="77.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/product_60px.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="83.0" prefWidth="365.0" text="PRODUCT">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="1249.0" layoutY="15.0" prefHeight="45.0" prefWidth="177.0">
+         <children>
+            <Label prefHeight="46.0" prefWidth="42.0" text="SM">
+               <font>
+                  <Font name="System Bold Italic" size="29.0" />
+               </font>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="135.0" text="International">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="3.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <VBox layoutX="44.0" layoutY="321.0" prefHeight="560.0" prefWidth="572.0">
+         <children>
+            <Pane fx:id="product_infopane" prefHeight="558.0" prefWidth="572.0">
+               <children>
+                  <Spinner layoutX="56.0" layoutY="59.0" prefHeight="46.0" prefWidth="246.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Spinner>
+                  <Label layoutX="398.0" layoutY="73.0" prefHeight="38.0" prefWidth="205.0" text="Product Name">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField focusColor="#2dbf32" layoutX="133.0" layoutY="193.0" prefHeight="58.0" prefWidth="96.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXTextField>
+                  <JFXButton fx:id="btn_productadd" buttonType="RAISED" layoutX="237.0" layoutY="191.0" prefHeight="58.0" prefWidth="65.0" text="+">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_productdel" buttonType="RAISED" layoutX="56.0" layoutY="189.0" prefHeight="58.0" prefWidth="65.0" text="-">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="398.0" layoutY="111.0" prefHeight="38.0" prefWidth="188.0" text="Product Price">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btn_product_add" buttonType="RAISED" layoutX="127.0" layoutY="400.0" prefHeight="98.0" prefWidth="134.0" text="ADD">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextArea layoutX="52.0" layoutY="314.0" prefHeight="41.0" prefWidth="258.0" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox layoutX="653.0" layoutY="153.0" prefHeight="729.0" prefWidth="750.0">
+         <children>
+            <Pane fx:id="product_pane" prefHeight="729.0" prefWidth="698.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <LineChart fx:id="product_rate" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="28.0" layoutY="227.0" prefHeight="480.0" prefWidth="672.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
