@@ -151,5 +151,12 @@
 -fx-background-color:#99ffff;
 }
 #btn_productdel{
+ -fx-background-color:#99ffff;
+ }
+#btn_product_add{
 -fx-background-color:#99ffff;
+}
+#product_pane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
 }

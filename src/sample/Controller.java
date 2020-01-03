@@ -74,15 +74,75 @@ public class Controller implements Initializable {
     private NumberAxis growthrate_y;
 
 
+    @FXML
+    private LineChart<?, ?> product_rate;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initDrawer();
-        piechart1();
-        barchar1();
-        custbar();
-        linecahrt();
+        //initDrawer();
+        //piechart1();
+        //barchar1();
+        //custbar();
+        //linecahrt();
+        product_line();
+    }
+
+    private void product_line() {
+
+        XYChart.Series set1=new XYChart.Series<>();
+        set1.getData().add(new XYChart.Data("A",100) );
+        set1.getData().add(new XYChart.Data("B",92) );
+        set1.getData().add(new XYChart.Data("C",50) );
+        set1.getData().add(new XYChart.Data("D",100) );
+        set1.getData().add(new XYChart.Data("E",69) );
+        set1.getData().add(new XYChart.Data("F",69) );
+
+        XYChart.Series set2=new XYChart.Series<>();
+        set2.getData().add(new XYChart.Data("A",10) );
+        set2.getData().add(new XYChart.Data("B",50) );
+        set2.getData().add(new XYChart.Data("C",70) );
+        set2.getData().add(new XYChart.Data("D",80) );
+        set2.getData().add(new XYChart.Data("E",69) );
+        set2.getData().add(new XYChart.Data("F",75) );
+
+        XYChart.Series set3=new XYChart.Series<>();
+        set3.getData().add(new XYChart.Data("A",97) );
+        set3.getData().add(new XYChart.Data("B",53) );
+        set3.getData().add(new XYChart.Data("C",75) );
+        set3.getData().add(new XYChart.Data("D",86) );
+        set3.getData().add(new XYChart.Data("E",93) );
+        set3.getData().add(new XYChart.Data("F",79) );
+
+        XYChart.Series set4=new XYChart.Series<>();
+        set4.getData().add(new XYChart.Data("A",12) );
+        set4.getData().add(new XYChart.Data("B",59) );
+        set4.getData().add(new XYChart.Data("C",24) );
+        set4.getData().add(new XYChart.Data("D",6) );
+        set4.getData().add(new XYChart.Data("E",36) );
+        set4.getData().add(new XYChart.Data("F",77) );
+
+        XYChart.Series set5=new XYChart.Series<>();
+        set5.getData().add(new XYChart.Data("A",35) );
+        set5.getData().add(new XYChart.Data("B",30) );
+        set5.getData().add(new XYChart.Data("C",67) );
+        set5.getData().add(new XYChart.Data("D",45) );
+        set5.getData().add(new XYChart.Data("E",77) );
+        set5.getData().add(new XYChart.Data("F",26) );
+
+        XYChart.Series set6=new XYChart.Series<>();
+        set6.getData().add(new XYChart.Data("A",15) );
+        set6.getData().add(new XYChart.Data("B",95) );
+        set6.getData().add(new XYChart.Data("C",85) );
+        set6.getData().add(new XYChart.Data("D",40) );
+        set6.getData().add(new XYChart.Data("E",30) );
+        set6.getData().add(new XYChart.Data("F",20) );
+
+        product_rate.getYAxis().setTickLabelsVisible(false);
+        product_rate.getYAxis().setTickMarkVisible(false);
+        product_rate.getXAxis().setTickMarkVisible(false);
+        product_rate.getXAxis().setTickLabelsVisible(false);
+        product_rate.getData().addAll(set1,set2,set3,set4,set5,set6);
     }
 
     private void linecahrt() {

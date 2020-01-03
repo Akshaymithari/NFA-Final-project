@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.effect.DropShadow?>
@@ -14,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="product" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="product" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <HBox layoutX="43.0" layoutY="38.0" prefHeight="83.0" prefWidth="345.0">
          <children>
@@ -50,16 +54,16 @@
             </Label>
          </children>
       </HBox>
-      <VBox layoutX="43.0" layoutY="157.0">
+      <VBox layoutX="804.0" layoutY="313.0" prefHeight="560.0" prefWidth="572.0">
          <children>
-            <Pane fx:id="product_infopane" prefHeight="690.0" prefWidth="750.0">
+            <Pane fx:id="product_infopane" prefHeight="558.0" prefWidth="572.0">
                <children>
                   <Spinner layoutX="56.0" layoutY="59.0" prefHeight="46.0" prefWidth="246.0">
                      <effect>
                         <DropShadow />
                      </effect>
                   </Spinner>
-                  <Label layoutX="398.0" layoutY="73.0" prefHeight="38.0" prefWidth="205.0" text="Product Name">
+                  <Label layoutX="372.0" layoutY="81.0" prefHeight="38.0" prefWidth="172.0" text="Product Name">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -78,15 +82,40 @@
                         <Font name="System Bold" size="26.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="398.0" layoutY="111.0" prefHeight="38.0" prefWidth="188.0" text="Product Price">
+                  <Label layoutX="398.0" layoutY="111.0" prefHeight="38.0" prefWidth="110.0" text="Product Price">
                      <font>
                         <Font name="System Italic" size="18.0" />
                      </font>
                   </Label>
+                  <JFXButton fx:id="btn_product_add" buttonType="RAISED" layoutX="127.0" layoutY="400.0" prefHeight="98.0" prefWidth="134.0" text="ADD">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextArea layoutX="52.0" layoutY="314.0" prefHeight="41.0" prefWidth="258.0" />
                </children>
                <effect>
                   <DropShadow />
                </effect>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox layoutX="25.0" layoutY="143.0" prefHeight="729.0" prefWidth="750.0">
+         <children>
+            <Pane fx:id="product_pane" prefHeight="729.0" prefWidth="698.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <LineChart fx:id="product_rate" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="18.0" layoutY="227.0" prefHeight="480.0" prefWidth="712.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </children>
             </Pane>
          </children>
       </VBox>
