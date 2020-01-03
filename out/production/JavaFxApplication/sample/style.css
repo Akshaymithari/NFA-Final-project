@@ -1,5 +1,5 @@
 .root {
--fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
+
 }
 #main_pane{
 -fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
@@ -8,10 +8,7 @@
 -fx-background-color:#FCF9F9;
 }
 #drawer{
--fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
--fx-background-radius: 0 10 10 0;
-}
-#drawer1{
+-fx-background-color:transparent;
 -fx-background-radius: 0 10 10 0;
 }
 #btn_home:hover{
@@ -142,4 +139,17 @@
 }
 .scroll-pane > .corner {
     -fx-background-color: transparent;
+}
+#product{
+-fx-background-color:linear-gradient(to right bottom, #de228d, #d14baf, #be68c9, #a980db, #9593e5, #84a3f0, #76b2f6, #6fc0f8, #61d1fe, #5ce2ff, #67f1fc, #7efff6);
+}
+#product_infopane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#btn_productadd{
+-fx-background-color:#99ffff;
+}
+#btn_productdel{
+-fx-background-color:#99ffff;
 }

@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXSpinner?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -16,10 +17,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -112,8 +109,6 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ProgressIndicator fx:id="emp_pro" layoutX="247.0" layoutY="53.0" prefHeight="90.0" prefWidth="131.0" progress="0.63" />
-                                    <ProgressIndicator fx:id="emp_br" layoutX="974.0" layoutY="44.0" prefHeight="90.0" prefWidth="131.0" progress="0.83" />
                                     <BarChart fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="50.0" layoutY="143.0" prefHeight="379.0" prefWidth="1073.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" fx:id="x" />
@@ -122,6 +117,8 @@
                                         <NumberAxis fx:id="y" side="LEFT" />
                                       </yAxis>
                                     </BarChart>
+                                    <JFXSpinner fx:id="emp_pro" layoutX="247.0" layoutY="65.0" prefHeight="66.0" prefWidth="78.0" progress="0.84" />
+                                    <JFXSpinner fx:id="br_pro" layoutX="990.0" layoutY="65.0" prefHeight="66.0" prefWidth="78.0" progress="0.64" />
                                  </children>
                               </Pane>
                            </children>
@@ -192,21 +189,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <JFXSlider fx:id="slider_totalsale" prefHeight="25.0">
-                                             <effect>
-                                                <Glow>
-                                                   <input>
-                                                      <Lighting>
-                                                         <bumpInput>
-                                                            <Shadow />
-                                                         </bumpInput>
-                                                         <light>
-                                                            <Light.Distant />
-                                                         </light>
-                                                      </Lighting>
-                                                   </input>
-                                                </Glow>
-                                             </effect></JFXSlider>
+                                          <JFXSlider fx:id="slider_totalsale" prefHeight="25.0" />
                                           <Label layoutX="10.0" layoutY="135.0" prefHeight="25.0" prefWidth="242.0" text="Income Amount">
                                              <VBox.margin>
                                                 <Insets left="10.0" />
@@ -215,21 +198,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <JFXSlider fx:id="slider_income" layoutX="10.0" layoutY="10.0" prefHeight="25.0">
-                                             <effect>
-                                                <Glow>
-                                                   <input>
-                                                      <Lighting>
-                                                         <bumpInput>
-                                                            <Shadow />
-                                                         </bumpInput>
-                                                         <light>
-                                                            <Light.Distant />
-                                                         </light>
-                                                      </Lighting>
-                                                   </input>
-                                                </Glow>
-                                             </effect></JFXSlider>
+                                          <JFXSlider fx:id="slider_income" layoutX="10.0" layoutY="10.0" prefHeight="25.0" />
                                           <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="242.0" text="Total Budget">
                                              <VBox.margin>
                                                 <Insets left="10.0" />
@@ -238,21 +207,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <JFXSlider fx:id="slider_budget" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="240.0">
-                                             <effect>
-                                                <Glow>
-                                                   <input>
-                                                      <Lighting>
-                                                         <bumpInput>
-                                                            <Shadow />
-                                                         </bumpInput>
-                                                         <light>
-                                                            <Light.Distant />
-                                                         </light>
-                                                      </Lighting>
-                                                   </input>
-                                                </Glow>
-                                             </effect></JFXSlider>
+                                          <JFXSlider fx:id="slider_budget" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="240.0" />
                                           <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="242.0" text="Completed Tasks">
                                              <VBox.margin>
                                                 <Insets left="10.0" />
@@ -261,21 +216,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <JFXSlider fx:id="slider_tasks" layoutX="10.0" layoutY="28.0" prefHeight="25.0">
-                                             <effect>
-                                                <Glow>
-                                                   <input>
-                                                      <Lighting>
-                                                         <bumpInput>
-                                                            <Shadow />
-                                                         </bumpInput>
-                                                         <light>
-                                                            <Light.Distant />
-                                                         </light>
-                                                      </Lighting>
-                                                   </input>
-                                                </Glow>
-                                             </effect></JFXSlider>
+                                          <JFXSlider fx:id="slider_tasks" layoutX="10.0" layoutY="28.0" prefHeight="25.0" />
                                        </children>
                                     </VBox>
                                     <VBox layoutX="386.0" layoutY="68.0" prefHeight="200.0" prefWidth="54.0">
@@ -404,7 +345,7 @@
                                        <children>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icon/icons8_personal_growth_30px%201.png" />
+                                                <Image url="@../icon/icons8_personal_growth_30px 1.png" />
                                              </image>
                                              <HBox.margin>
                                                 <Insets left="5.0" top="5.0" />

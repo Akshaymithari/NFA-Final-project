@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="drawer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="drawer_menus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <JFXButton fx:id="btn_home" buttonType="RAISED" prefHeight="115.0" prefWidth="220.0" text="Home">
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_pavilion_30px%201%20(1).png" />
+                  <Image url="@../icon/icons8_pavilion_30px 1 (1).png" />
                </image>
             </ImageView>
          </graphic>
@@ -24,7 +24,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_procurement_30px%201.png" />
+                  <Image url="@../icon/icons8_procurement_30px 1.png" />
                </image>
             </ImageView>
          </graphic>
@@ -36,7 +36,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_hard_working_30px%201.png" />
+                  <Image url="@../icon/icons8_hard_working_30px 1.png" />
                </image>
             </ImageView>
          </graphic>
@@ -48,7 +48,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_request_money_30px%201.png" />
+                  <Image url="@../icon/icons8_request_money_30px 1.png" />
                </image>
             </ImageView>
          </graphic>
@@ -60,7 +60,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_info_30px%201.png" />
+                  <Image url="@../icon/icons8_info_30px 1.png" />
                </image>
             </ImageView>
          </graphic>
@@ -72,7 +72,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_help_30px%201.png" />
+                  <Image url="@../icon/icons8_help_30px 1.png" />
                </image>
             </ImageView>
          </graphic>
