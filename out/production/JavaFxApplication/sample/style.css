@@ -1,10 +1,10 @@
 .root {
-
+-fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
 }
 #main_pane{
 -fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
 }
-#top_bar{
+#topbar{
 -fx-background-color:#FCF9F9;
 }
 #drawer{
@@ -113,33 +113,7 @@
 -fx-background-color:linear-gradient(blue,pink);
 -fx-background-radius:15 15 0 0;
  }
- #scroll_bar {
-     -fx-background-color: transparent;
- }
-.scroll-bar:horizontal, .scroll-bar:vertical{
-    -fx-background-color:transparent;
-}
-
-.increment-button, .decrement-button {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-}
-
-.scroll-bar:horizontal .track,
-.scroll-bar:vertical .track{
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-background-radius: 15em;
-}
-
-.scroll-bar:horizontal .thumb,
-.scroll-bar:vertical .thumb {
-    -fx-background-color: white;
-    -fx-background-radius: 15em;
-}
-.scroll-pane > .corner {
-    -fx-background-color: transparent;
-}
+ /*Product Pane*/
 #product{
 -fx-background-color:linear-gradient(to right bottom, #de228d, #d14baf, #be68c9, #a980db, #9593e5, #84a3f0, #76b2f6, #6fc0f8, #61d1fe, #5ce2ff, #67f1fc, #7efff6);
 }
@@ -159,4 +133,63 @@
 #product_pane{
 -fx-background-color:#FCF9F9;
 -fx-background-radius: 15px
+}
+#products{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#btn_transport{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+
+
+/*Scroll Pane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 5em;
+}
+
+/* Employee Pane*/
+#emp_pane{
+-fx-background-color:linear-gradient(to right bottom, #de228d, #d14baf, #be68c9, #a980db, #9593e5, #84a3f0, #76b2f6, #6fc0f8, #61d1fe, #5ce2ff, #67f1fc, #7efff6);
+}
+#emp_tab{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+
+/* Billing Pane*/
+#billing_pane{
+-fx-background-color:linear-gradient(to right bottom, #de228d, #d14baf, #be68c9, #a980db, #9593e5, #84a3f0, #76b2f6, #6fc0f8, #61d1fe, #5ce2ff, #67f1fc, #7efff6);
+}
+#billing_tab{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#btn_printbill{
+-fx-background-color:#99ffff;
+}
+#btn_clearbill{
+-fx-background-color:#99ffff;
 }

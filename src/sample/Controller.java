@@ -6,15 +6,21 @@ import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.*;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,6 +79,8 @@ public class Controller implements Initializable {
     @FXML
     private NumberAxis growthrate_y;
 
+    @FXML
+    private Button btn_logout;
 
     @FXML
     private LineChart<?, ?> product_rate;
@@ -80,15 +88,29 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //initDrawer();
-        //piechart1();
-        //barchar1();
-        //custbar();
-        //linecahrt();
-        product_line();
+        initDrawer();
+        piechart1();
+        barchar1();
+        custbar();
+        linecahrt();
+        //product_line();
     }
+    @FXML
+    void logout(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            ((Node)event.getSource()).getScene().getWindow().hide();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-    private void product_line() {
+    }
+    /*private void product_line() {
 
         XYChart.Series set1=new XYChart.Series<>();
         set1.getData().add(new XYChart.Data("A",100) );
@@ -143,7 +165,7 @@ public class Controller implements Initializable {
         product_rate.getXAxis().setTickMarkVisible(false);
         product_rate.getXAxis().setTickLabelsVisible(false);
         product_rate.getData().addAll(set1,set2,set3,set4,set5,set6);
-    }
+    }*/
 
     private void linecahrt() {
 
@@ -227,7 +249,7 @@ public class Controller implements Initializable {
 
     private void initDrawer()  {
         try {
-            VBox box=FXMLLoader.load(getClass().getResource("/sample/drawer.fxml"));
+            VBox box=FXMLLoader.load(getClass().getResource("drawer.fxml"));
             drawer.setSidePane(box);
         } catch (IOException e) {
             e.printStackTrace();

@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="drawer_menus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="drawer_menus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.drawerController">
    <children>
       <JFXButton fx:id="btn_home" buttonType="RAISED" prefHeight="115.0" prefWidth="220.0" text="Home">
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_pavilion_30px 1 (1).png" />
+                  <Image url="@../icon/icons8_pavilion_30px%201%20(1).png" />
                </image>
             </ImageView>
          </graphic>
@@ -20,11 +20,11 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_product" buttonType="RAISED" prefHeight="115.0" prefWidth="220.0" text="Product">
+      <JFXButton fx:id="btn_product" buttonType="RAISED" onAction="#openProduct" prefHeight="115.0" prefWidth="220.0" text="Product">
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_procurement_30px 1.png" />
+                  <Image url="@../icon/icons8_procurement_30px%201.png" />
                </image>
             </ImageView>
          </graphic>
@@ -32,11 +32,11 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_emp" buttonType="RAISED" prefHeight="115.0" prefWidth="220.0" text="Employee">
+      <JFXButton fx:id="btn_emp" buttonType="RAISED" onAction="#openEmployee" prefHeight="115.0" prefWidth="220.0" text="Employee">
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_hard_working_30px 1.png" />
+                  <Image url="@../icon/icons8_hard_working_30px%201.png" />
                </image>
             </ImageView>
          </graphic>
@@ -44,11 +44,11 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btn_billing" buttonType="RAISED" prefHeight="115.0" prefWidth="220.0" text="Billing">
+      <JFXButton fx:id="btn_billing" buttonType="RAISED" onAction="#openBilling" prefHeight="115.0" prefWidth="220.0" text="Billing">
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_request_money_30px 1.png" />
+                  <Image url="@../icon/icons8_request_money_30px%201.png" />
                </image>
             </ImageView>
          </graphic>
@@ -60,7 +60,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_info_30px 1.png" />
+                  <Image url="@../icon/icons8_info_30px%201.png" />
                </image>
             </ImageView>
          </graphic>
@@ -72,7 +72,7 @@
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/icons8_help_30px 1.png" />
+                  <Image url="@../icon/icons8_help_30px%201.png" />
                </image>
             </ImageView>
          </graphic>
