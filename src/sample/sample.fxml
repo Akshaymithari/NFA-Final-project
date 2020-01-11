@@ -258,7 +258,7 @@
                         </Pane>
                      </children>
                   </HBox>
-                  <VBox layoutX="1112.0" layoutY="609.0" prefHeight="354.0" prefWidth="372.0" AnchorPane.bottomAnchor="927.0" AnchorPane.rightAnchor="528.0" AnchorPane.topAnchor="609.0">
+                  <VBox id="panelleft" layoutX="1044.0" layoutY="619.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="372.0" stylesheets="@style.css" AnchorPane.rightAnchor="516.0">
                      <children>
                         <Pane fx:id="profit" prefHeight="294.0" prefWidth="454.0">
                            <effect>
@@ -281,6 +281,7 @@
                                     <Insets left="10.0" />
                                  </padding>
                               </Label>
+                              <HBox layoutX="-39.0" layoutY="-36.0" prefHeight="300.0" prefWidth="414.0" />
                            </children>
                         </Pane>
                      </children>

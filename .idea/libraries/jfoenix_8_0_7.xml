@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="jfoenix-8.0.8">
+  <library name="jfoenix-8.0.7">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Sem VI/Python/jfoenix-8.0.8.jar!/" />
+      <root url="jar://D:/jars/jfoenix-8.0.7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

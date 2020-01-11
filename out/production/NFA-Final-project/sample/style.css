@@ -174,10 +174,24 @@
 #emp_pane{
 -fx-background-color:linear-gradient(to right bottom, #de228d, #d14baf, #be68c9, #a980db, #9593e5, #84a3f0, #76b2f6, #6fc0f8, #61d1fe, #5ce2ff, #67f1fc, #7efff6);
 }
-#emp_tab{
--fx-background-color:#FCF9F9;
--fx-background-radius: 15px
+#tab_emp{
+-fx-background-color: linear-gradient(to right bottom, #f0ccd9, #e6c7e0, #d4c4e8, #bbc4ed, #9cc4ed, #84c9ee, #6bcde9, #59d1dd, #56d9d2, #65e0c1, #80e6ac, #a1e996);
+-fx-background-radius:0 0 15 15;
 }
+#tab_res{
+-fx-background-color: linear-gradient(to right bottom, #f0ccd9, #e6c7e0, #d4c4e8, #bbc4ed, #9cc4ed, #84c9ee, #6bcde9, #59d1dd, #56d9d2, #65e0c1, #80e6ac, #a1e996);
+-fx-background-radius:0 0 15 15;
+}
+#btn_emp_edit{
+-fx-background-color:#99ffff;
+}
+#btn_emp_remove{
+-fx-background-color:#99ffff;
+}
+#btn_emp_add{
+-fx-background-color:#99ffff;
+}
+
 
 /* Billing Pane*/
 #billing_pane{
@@ -192,4 +206,7 @@
 }
 #btn_clearbill{
 -fx-background-color:#99ffff;
+}
+#panelleft{
+-fx-padding-left:500px;
 }
