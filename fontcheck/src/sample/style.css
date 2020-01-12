@@ -1,0 +1,11 @@
+
+@font-face {
+    font-family: 'Cute Font';
+    src: url('CuteFont-Regular.ttf');
+}
+
+#label{
+ -fx-font-family: "Cute Font";
+ -fx-font-style:Bold;
+
+}
