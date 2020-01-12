@@ -1,0 +1,162 @@
+.root {
+
+}
+#main_pane{
+-fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
+}
+#top_bar{
+-fx-background-color:#FCF9F9;
+}
+#drawer{
+-fx-background-color:transparent;
+-fx-background-radius: 0 10 10 0;
+}
+#btn_home:hover{
+-fx-background-color:#FCF9F9;
+}
+#btn_product:hover{
+-fx-background-color:#FCF9F9;
+}
+#btn_emp:hover{
+-fx-background-color:#FCF9F9;
+}
+#btn_billing:hover{
+-fx-background-color:#FCF9F9;
+}
+#btn_about:hover{
+-fx-background-color:#FCF9F9;
+}
+#btn_help{
+-fx-background-radius: 0 0 10 0;
+}
+#btn_help:hover{
+-fx-background-color:#FCF9F9;
+}
+#bar_pane{
+-fx-background-color:#FCF9F9;
+-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+-fx-background-radius: 20px
+}
+#root_login{
+-fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
+}
+#pane1{
+	-fx-background-radius:15px;
+	-fx-background-color:#393f4d;
+}
+#acpane1{
+	-fx-background-radius:15 0 0 15;
+	-fx-background-color:#61e8cb;
+}
+#pane_login{
+	-fx-background-radius:15px;
+	-fx-background-color: white;
+
+}
+#btn_login{
+	-fx-background-radius:15px;
+	-fx-background-color:#61e8cb;
+
+}
+#btn_login:pressed{
+	-fx-background-color:#FFFFFF;
+}
+#activity_pane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#profit_pane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#cust_pane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#profit{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#bill_pane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#sales_pane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#task_pane{
+-fx-background-color:#FCF9F9;
+ -fx-background-radius: 23px
+}
+#pie_pane{
+-fx-background-color:#FCF9F9;
+ -fx-background-radius: 15px;
+}
+#emp_pro{
+-fx-progress-color:#DA005B ;
+}
+#br_pro{
+-fx-progress-color:#6000DA ;
+}
+#pro_in1{
+-fx-progress-color:#F11717 ;
+}
+#br_pro{
+-fx-progress-color:#0998C6 ;
+}
+.default-color0.chart-bar {
+-fx-background-color:#0786FE ;
+-fx-background-radius:15 15 0 0;
+ }
+.default-color1.chart-bar {
+-fx-background-color:linear-gradient(blue,pink);
+-fx-background-radius:15 15 0 0;
+ }
+ #scroll_bar {
+     -fx-background-color: transparent;
+ }
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 15em;
+}
+.scroll-pane > .corner {
+    -fx-background-color: transparent;
+}
+#product{
+-fx-background-color:linear-gradient(to right bottom, #de228d, #d14baf, #be68c9, #a980db, #9593e5, #84a3f0, #76b2f6, #6fc0f8, #61d1fe, #5ce2ff, #67f1fc, #7efff6);
+}
+#product_infopane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}
+#btn_productadd{
+-fx-background-color:#99ffff;
+}
+#btn_productdel{
+ -fx-background-color:#99ffff;
+ }
+#btn_product_add{
+-fx-background-color:#99ffff;
+}
+#product_pane{
+-fx-background-color:#FCF9F9;
+-fx-background-radius: 15px
+}

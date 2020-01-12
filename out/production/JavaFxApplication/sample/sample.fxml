@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox fx:id="top_bar" prefHeight="100.0" prefWidth="1440.0">
+         <children>
+            <JFXHamburger fx:id="ham_menu" prefHeight="100.0" prefWidth="107.0" />
+            <Pane prefHeight="100.0" prefWidth="93.0">
+               <children>
+                  <ImageView fx:id="admin_icon" fitHeight="66.0" fitWidth="66.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/administrator_male_48px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="208.0">
+               <children>
+                  <VBox layoutY="26.0" prefHeight="54.0" prefWidth="208.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="208.0" text="Admin">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="21.0" prefWidth="210.0" text="Designation">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <VBox layoutY="100.0" prefHeight="1900.0" prefWidth="1440.0">
+         <children>
+            <ScrollPane fx:id="scroll_bar" prefHeight="800.0" prefWidth="1440.0">
+               <content>
+                <AnchorPane fx:id="main_pane" minHeight="0.0" minWidth="0.0" prefHeight="1950.0" prefWidth="1440.0">
+                     <children>
+                        <HBox fx:id="bar_box" layoutX="215.0" layoutY="37.0" prefHeight="558.0" prefWidth="1171.0">
+                           <children>
+                              <Pane fx:id="bar_pane" prefHeight="498.0" prefWidth="1233.0">
+                                 <children>
+                                    <Label layoutX="39.0" layoutY="14.0" prefHeight="21.0" prefWidth="208.0" text="Monthly Anniversary ">
+                                       <font>
+                                          <Font name="Leelawadee UI Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox layoutX="122.0" layoutY="53.0" prefHeight="21.0" prefWidth="208.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/staff_30px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="30.0" prefWidth="124.0" text="Employee">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="6.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="846.0" layoutY="53.0" prefHeight="30.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/line_chart_30px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="31.0" prefWidth="138.0" text="Bounce Rate">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="6.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <BarChart fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="50.0" layoutY="143.0" prefHeight="379.0" prefWidth="1073.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" fx:id="x" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="y" side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                    <JFXSpinner fx:id="emp_pro" layoutX="247.0" layoutY="65.0" prefHeight="66.0" prefWidth="78.0" progress="0.84" />
+                                    <JFXSpinner fx:id="br_pro" layoutX="990.0" layoutY="65.0" prefHeight="66.0" prefWidth="78.0" progress="0.64" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="drawerbox" prefHeight="641.0" prefWidth="200.0">
+                           <children>
+                              <JFXDrawer fx:id="drawer" defaultDrawerSize="220.0" overLayVisible="false" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" />
+                           </children>
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </VBox>
+                        <VBox layoutX="57.0" layoutY="669.0" prefHeight="284.0" prefWidth="454.0">
+                           <children>
+                              <Pane fx:id="activity_pane" prefHeight="294.0" prefWidth="454.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <HBox layoutX="27.0" layoutY="14.0" prefHeight="34.0" prefWidth="129.0">
+                                       <children>
+                                          <ImageView fitHeight="34.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/activity_feed_30px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="34.0" prefWidth="120.0" text="Activity">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="6.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <VBox layoutX="40.0" layoutY="60.0" prefHeight="215.0" prefWidth="50.0" spacing="5.0">
+                                       <children>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/increase_48px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/transaction_48px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/money_bag_shekel_30px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/semi_truck_48px.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="130.0" layoutY="60.0" prefHeight="215.0" prefWidth="240.0" spacing="5.0">
+                                       <children>
+                                          <Label prefHeight="25.0" prefWidth="242.0" text="Total Sale">
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXSlider fx:id="slider_totalsale" prefHeight="25.0" />
+                                          <Label layoutX="10.0" layoutY="135.0" prefHeight="25.0" prefWidth="242.0" text="Income Amount">
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXSlider fx:id="slider_income" layoutX="10.0" layoutY="10.0" prefHeight="25.0" />
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="242.0" text="Total Budget">
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXSlider fx:id="slider_budget" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="240.0" />
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="242.0" text="Completed Tasks">
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXSlider fx:id="slider_tasks" layoutX="10.0" layoutY="28.0" prefHeight="25.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="386.0" layoutY="68.0" prefHeight="200.0" prefWidth="54.0">
+                                       <children>
+                                          <Label prefHeight="50.0" prefWidth="57.0" text="18,255">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="57.0" text="18,532">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="57.0" text="11,256">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="57.0" text="105">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <HBox layoutX="558.0" layoutY="629.0" prefHeight="141.0" prefWidth="438.0">
+                           <children>
+                              <Pane fx:id="profit_pane" prefHeight="209.0" prefWidth="438.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <HBox layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="143.0">
+                                       <children>
+                                          <ImageView fitHeight="27.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/profit_30px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="34.0" prefWidth="120.0" text="Profit Rate">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="6.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <ProgressIndicator fx:id="pro_in1" layoutX="50.0" layoutY="58.0" prefHeight="80.0" prefWidth="93.0" progress="0.39" />
+                                    <ProgressIndicator fx:id="pro_in2" layoutX="269.0" layoutY="58.0" prefHeight="66.0" prefWidth="79.0" progress="0.57" />
+                                    <VBox layoutX="129.0" layoutY="66.0" prefHeight="66.0" prefWidth="85.0">
+                                       <children>
+                                          <Label prefHeight="44.0" prefWidth="85.0" text="\$11K">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="86.0" text="2019">
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold Italic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="348.0" layoutY="58.0" prefHeight="66.0" prefWidth="85.0">
+                                       <children>
+                                          <Label prefHeight="44.0" prefWidth="85.0" text="\$21K">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="86.0" text="2018">
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold Italic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="554.0" layoutY="809.0" prefHeight="141.0" prefWidth="438.0">
+                           <children>
+                              <Pane fx:id="cust_pane" prefHeight="163.0" prefWidth="440.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <HBox layoutX="15.0" layoutY="10.0" prefHeight="27.0" prefWidth="128.0">
+                                       <children>
+                                          <ImageView fitHeight="27.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/customer_insight_50px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="34.0" prefWidth="120.0" text="Customers">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="6.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="6.0" layoutY="62.0" prefHeight="69.0" prefWidth="182.0">
+                                       <children>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/icons8_personal_growth_30px 1.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="69.0" prefWidth="169.0" text="56.3K">
+                                             <font>
+                                                <Font name="System Bold" size="36.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="6.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <BarChart fx:id="cust_bar" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="154.0" prefHeight="128.0" prefWidth="282.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                      <xAxis>
+                                        <CategoryAxis fx:id="cust_x" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="cust_y" animated="false" side="LEFT" tickLabelsVisible="false" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="1026.0" layoutY="621.0" prefHeight="274.0" prefWidth="384.0">
+                           <children>
+                              <Pane fx:id="profit" prefHeight="294.0" prefWidth="454.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <LineChart fx:id="growth_rate" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="2.0" layoutY="60.0" prefHeight="214.0" prefWidth="384.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                      <xAxis>
+                                        <CategoryAxis fx:id="growthrate_x" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="growthrate_y" side="LEFT" tickLabelsVisible="false" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <Label layoutX="119.0" layoutY="2.0" prefHeight="50.0" prefWidth="125.0" text="\$4000">
+                                       <font>
+                                          <Font name="System Bold" size="36.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="118.0" layoutY="1004.0" prefHeight="355.0" prefWidth="504.0">
+                           <children>
+                              <Pane fx:id="bill_pane" prefHeight="387.0" prefWidth="504.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <HBox layoutX="27.0" layoutY="14.0" prefHeight="34.0" prefWidth="129.0">
+                                       <children>
+                                          <Label prefHeight="34.0" prefWidth="120.0" text="Latest Bills">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="30.0" layoutY="75.0" prefHeight="51.0" prefWidth="279.0">
+                                       <children>
+                                          <ImageView fitHeight="54.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/final_state_64px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="51.0" prefWidth="194.0" text="Company Name" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="53.0" fitWidth="41.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/100px-PDF_file_icon.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="30.0" layoutY="152.0" prefHeight="51.0" prefWidth="279.0">
+                                       <children>
+                                          <ImageView fitHeight="49.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/final_state_64px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="51.0" prefWidth="201.0" text="Company Name" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="53.0" fitWidth="41.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/100px-PDF_file_icon.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="30.0" layoutY="229.0" prefHeight="51.0" prefWidth="279.0">
+                                       <children>
+                                          <ImageView fitHeight="49.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/final_state_64px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="51.0" prefWidth="194.0" text="Company Name" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="53.0" fitWidth="41.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/100px-PDF_file_icon.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="381.0" layoutY="83.0" prefHeight="40.0" prefWidth="107.0" text="August 15" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="378.0" layoutY="160.0" prefHeight="40.0" prefWidth="107.0" text="August 15" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="381.0" layoutY="233.0" prefHeight="40.0" prefWidth="107.0" text="August 15" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="-119.5" endY="-90.0" layoutX="174.0" layoutY="319.0" startX="-119.5" startY="-118.0" />
+                                    <Line endX="-118.0" endY="-95.0" layoutX="172.0" layoutY="247.0" startX="-118.0" startY="-124.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="720.0" layoutY="1012.0" prefHeight="408.0" prefWidth="632.0">
+                           <children>
+                              <Pane fx:id="sales_pane" prefHeight="418.0" prefWidth="632.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <HBox layoutX="27.0" layoutY="14.0" prefHeight="34.0" prefWidth="129.0">
+                                       <children>
+                                          <Label prefHeight="34.0" prefWidth="120.0" text="Sales">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="28.0" layoutY="52.0" prefHeight="21.0" prefWidth="201.0" text="Calculated in last 7 Days">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox layoutX="80.0" layoutY="250.0" prefHeight="40.0" prefWidth="241.0">
+                                       <children>
+                                          <ImageView fitHeight="54.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/upward_arrow_48px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox prefHeight="49.0" prefWidth="185.0">
+                                             <children>
+                                                <Label prefHeight="27.0" prefWidth="209.0" text="Best Selling">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="214.0" text="Day">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="80.0" layoutY="320.0" prefHeight="40.0" prefWidth="241.0">
+                                       <children>
+                                          <ImageView fitHeight="54.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/scroll_down_48px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox prefHeight="49.0" prefWidth="185.0">
+                                             <children>
+                                                <Label prefHeight="27.0" prefWidth="209.0" text="Lowest Selling">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="214.0" text="Day">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="380.0" layoutY="250.0" prefHeight="49.0" prefWidth="80.0" text="28K">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="380.0" layoutY="320.0" prefHeight="49.0" prefWidth="80.0" text="10K">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox layoutX="32.0" layoutY="87.0" prefHeight="151.0" prefWidth="569.0">
+                                       <children>
+                                          <VBox prefHeight="151.0" prefWidth="90.0">
+                                             <children>
+                                                <JFXSlider orientation="VERTICAL" prefHeight="115.0" prefWidth="81.0" />
+                                                <Label prefHeight="37.0" prefWidth="81.0" text="Sun" textAlignment="JUSTIFY">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="10.0" layoutY="10.0" prefHeight="151.0" prefWidth="90.0">
+                                             <children>
+                                                <JFXSlider orientation="VERTICAL" prefHeight="115.0" prefWidth="81.0" />
+                                                <Label prefHeight="41.0" prefWidth="81.0" text="Mon" textAlignment="JUSTIFY">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="10.0" layoutY="10.0" prefHeight="151.0" prefWidth="90.0">
+                                             <children>
+                                                <JFXSlider orientation="VERTICAL" prefHeight="115.0" prefWidth="81.0" />
+                                                <Label prefHeight="41.0" prefWidth="81.0" text="Tue" textAlignment="JUSTIFY">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="74.0" layoutY="10.0" prefHeight="151.0" prefWidth="90.0">
+                                             <children>
+                                                <JFXSlider orientation="VERTICAL" prefHeight="115.0" prefWidth="81.0" />
+                                                <Label prefHeight="41.0" prefWidth="81.0" text="Wed" textAlignment="JUSTIFY">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="10.0" layoutY="10.0" prefHeight="151.0" prefWidth="90.0">
+                                             <children>
+                                                <JFXSlider orientation="VERTICAL" prefHeight="115.0" prefWidth="81.0" />
+                                                <Label prefHeight="41.0" prefWidth="81.0" text="Thu" textAlignment="JUSTIFY">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="74.0" layoutY="10.0" prefHeight="151.0" prefWidth="90.0">
+                                             <children>
+                                                <JFXSlider orientation="VERTICAL" prefHeight="115.0" prefWidth="81.0" />
+                                                <Label prefHeight="41.0" prefWidth="81.0" text="Fri" textAlignment="JUSTIFY">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="138.0" layoutY="10.0" prefHeight="151.0" prefWidth="90.0">
+                                             <children>
+                                                <JFXSlider orientation="VERTICAL" prefHeight="115.0" prefWidth="81.0" />
+                                                <Label prefHeight="41.0" prefWidth="81.0" text="Sat" textAlignment="JUSTIFY">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="87.0" layoutY="1447.0" prefHeight="399.0" prefWidth="740.0">
+                           <children>
+                              <Pane fx:id="task_pane" prefHeight="439.0" prefWidth="740.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <HBox layoutX="27.0" layoutY="14.0" prefHeight="41.0" prefWidth="692.0">
+                                       <children>
+                                          <Label prefHeight="41.0" prefWidth="229.0" text="Tasks">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="73.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/task_completed_30px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="36.0" prefWidth="196.0" text="All Tasks">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ImageView fitHeight="73.0" fitWidth="36.0" layoutX="267.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/filter_30px.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="303.0" layoutY="10.0" prefHeight="36.0" prefWidth="175.0" text="Sort Tasks">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <JFXCheckBox layoutX="70.0" layoutY="170.0" prefHeight="49.0" prefWidth="208.0" text="Company Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </JFXCheckBox>
+                                    <JFXCheckBox layoutX="70.0" layoutY="100.0" prefHeight="49.0" prefWidth="204.0" text="Company Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </JFXCheckBox>
+                                    <JFXCheckBox layoutX="70.0" layoutY="240.0" prefHeight="49.0" prefWidth="202.0" text="Company Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </JFXCheckBox>
+                                    <JFXProgressBar layoutX="306.0" layoutY="122.0" prefHeight="16.0" prefWidth="127.0" />
+                                    <JFXProgressBar layoutX="306.0" layoutY="193.0" prefHeight="16.0" prefWidth="127.0" />
+                                    <JFXProgressBar layoutX="306.0" layoutY="254.0" prefHeight="16.0" prefWidth="123.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="892.0" layoutY="1481.0" prefHeight="351.0" prefWidth="501.0">
+                           <children>
+                              <Pane fx:id="pie_pane" prefHeight="348.0" prefWidth="537.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <HBox layoutX="23.0" layoutY="15.0" prefHeight="315.0" prefWidth="495.0">
+                                       <children>
+                                          <PieChart fx:id="piechart" prefHeight="315.0" prefWidth="513.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</AnchorPane>
