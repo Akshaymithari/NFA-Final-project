@@ -3,14 +3,17 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -68,7 +71,7 @@
       </HBox>
       <JFXTabPane layoutX="51.0" layoutY="132.0" prefHeight="744.0" prefWidth="1339.0">
          <tabs>
-            <Tab text="Employee">
+            <Tab fx:id="tab_employee" text="Employee">
               <content>
                 <AnchorPane fx:id="tab_emp" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1398.0">
                      <children>
@@ -185,17 +188,18 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab text="Register">
+            <Tab fx:id="tab_register" text="Register">
               <content>
                 <AnchorPane fx:id="tab_res" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="171.0" fitWidth="176.0" layoutX="59.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
-                        <GridPane layoutX="296.0" layoutY="42.0" prefHeight="572.0" prefWidth="558.0">
+                        <GridPane layoutX="356.0" layoutY="35.0" prefHeight="580.0" prefWidth="638.0">
                            <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.33331298828125" minWidth="10.0" prefWidth="175.33331298828125" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="569.0" minWidth="10.0" prefWidth="483.66668701171875" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.33331298828125" minWidth="10.0" prefWidth="173.0001220703125" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="569.0" minWidth="10.0" prefWidth="464.9998779296875" />
                            </columnConstraints>
                            <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -240,65 +244,79 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="38.0" prefWidth="93.0" text="DOB" GridPane.rowIndex="6">
+                              <Label prefHeight="38.0" prefWidth="93.0" text="DOB" GridPane.rowIndex="7">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="38.0" prefWidth="41.0" text="Sex" GridPane.rowIndex="7">
+                              <Label prefHeight="38.0" prefWidth="41.0" text="Sex" GridPane.rowIndex="8">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="38.0" prefWidth="41.0" text="Age" GridPane.rowIndex="8">
+                              <Label prefHeight="38.0" prefWidth="41.0" text="Age" GridPane.rowIndex="9">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="38.0" prefWidth="114.0" text="Date Of hire" GridPane.rowIndex="9">
+                              <Label prefHeight="38.0" prefWidth="114.0" text="Date Of hire" GridPane.rowIndex="10">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="38.0" prefWidth="114.0" text="Experience" GridPane.rowIndex="10">
+                              <Label prefHeight="38.0" prefWidth="114.0" text="Experience" GridPane.rowIndex="11">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="38.0" prefWidth="114.0" text="Desgination" GridPane.rowIndex="11">
+                              <Label prefHeight="38.0" prefWidth="114.0" text="Desgination" GridPane.rowIndex="12">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXTextField layoutX="223.0" layoutY="118.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <JFXTextField layoutX="223.0" layoutY="166.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <JFXTextField layoutX="223.0" layoutY="214.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <JFXTextField layoutX="223.0" layoutY="310.0" prefHeight="25.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                              <JFXTextField layoutX="223.0" layoutY="405.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXTextField layoutX="223.0" layoutY="70.0" GridPane.columnIndex="1" />
-                              <JFXTextField layoutX="223.0" layoutY="452.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                              <JFXTextField layoutX="223.0" layoutY="499.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                              <JFXDatePicker GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <JFXDatePicker layoutX="155.0" layoutY="310.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                              <HBox prefHeight="36.0" prefWidth="454.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                              <JFXTextField fx:id="fname" layoutX="223.0" layoutY="70.0" GridPane.columnIndex="1" />
+                              <JFXTextField fx:id="lname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="address" layoutX="223.0" layoutY="405.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="pincode" layoutX="223.0" layoutY="118.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="mob_no" layoutX="223.0" layoutY="166.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="email" layoutX="223.0" layoutY="214.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <JFXPasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <JFXDatePicker fx:id="dob" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <HBox prefHeight="36.0" prefWidth="454.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                  <children>
-                                    <JFXRadioButton prefHeight="53.0" prefWidth="93.0" text="Male" />
-                                    <JFXRadioButton prefHeight="57.0" prefWidth="93.0" text="Female">
+                                    <JFXRadioButton fx:id="male" prefHeight="53.0" prefWidth="93.0" text="Male">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="gender" />
+                                       </toggleGroup></JFXRadioButton>
+                                    <JFXRadioButton fx:id="female" prefHeight="57.0" prefWidth="93.0" text="Female" toggleGroup="$gender">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </JFXRadioButton>
                                  </children>
                               </HBox>
+                              <JFXTextField fx:id="age" layoutX="223.0" layoutY="310.0" prefHeight="25.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <JFXDatePicker fx:id="date_of_hire" layoutX="155.0" layoutY="310.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <JFXTextField fx:id="experience" layoutX="223.0" layoutY="452.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                              <JFXTextField fx:id="designation" layoutX="223.0" layoutY="499.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                              <Label layoutX="10.0" layoutY="233.0" prefHeight="38.0" prefWidth="97.0" text="Password" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </GridPane>
-                        <JFXButton fx:id="btn_emp_add" buttonType="RAISED" layoutX="1172.0" layoutY="629.0" prefHeight="62.0" prefWidth="133.0" text="ADD">
+                        <JFXButton fx:id="btn_emp_add" buttonType="RAISED" layoutX="1172.0" layoutY="629.0" onAction="#registerEmployee" prefHeight="62.0" prefWidth="133.0" text="ADD">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
                            </font>
                         </JFXButton>
+                        <JFXTextArea fx:id="txt_background_detail" layoutX="513.0" layoutY="628.0" prefHeight="62.0" prefWidth="478.0" />
+                        <Label fx:id="background" layoutX="359.0" layoutY="640.0" prefHeight="38.0" prefWidth="114.0" text="Background">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
                      </children></AnchorPane>
               </content>
             </Tab>

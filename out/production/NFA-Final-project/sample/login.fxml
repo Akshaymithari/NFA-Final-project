@@ -20,7 +20,7 @@
 
 <AnchorPane fx:id="root_login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.loginController">
    <children>
-      <AnchorPane fx:id="pane_login" layoutX="291.0" layoutY="233.0" prefHeight="505.0" prefWidth="859.0" AnchorPane.bottomAnchor="162.0" AnchorPane.leftAnchor="291.0" AnchorPane.rightAnchor="290.0" AnchorPane.topAnchor="233.0">
+      <AnchorPane fx:id="pane_login" layoutX="278.0" layoutY="228.0" onDragDetected="#registeremp" prefHeight="505.0" prefWidth="859.0" AnchorPane.bottomAnchor="167.0" AnchorPane.leftAnchor="278.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="228.0">
          <children>
             <HBox layoutX="263.0" layoutY="61.0" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="263.0" AnchorPane.rightAnchor="261.0" AnchorPane.topAnchor="61.0">
                <children>
@@ -51,8 +51,8 @@
                </padding>
             </HBox>
             <Hyperlink layoutX="446.0" layoutY="346.0" text="Forgot Password?" textOverrun="CLIP" underline="true" />
-            <JFXTextField fx:id="txt_username" layoutX="300.0" layoutY="257.0" prefHeight="31.0" prefWidth="274.0" promptText="Username" AnchorPane.leftAnchor="300.0" />
-            <JFXPasswordField fx:id="txt_password" layoutX="300.0" layoutY="298.0" prefHeight="31.0" prefWidth="274.0" promptText="Password" />
+            <JFXTextField id="username" fx:id="txt_username" layoutX="300.0" layoutY="257.0" prefHeight="31.0" prefWidth="274.0" promptText="Username" AnchorPane.leftAnchor="300.0" />
+            <JFXPasswordField id="password" fx:id="txt_password" layoutX="300.0" layoutY="298.0" prefHeight="31.0" prefWidth="274.0" promptText="Password" />
             <JFXCheckBox layoutX="300.0" layoutY="350.0" text="Remember Me" />
             <Label layoutX="292.0" layoutY="135.0" prefHeight="29.0" prefWidth="289.0" text="Sign in to continue your account">
                <font>
@@ -64,6 +64,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </JFXButton>
+            <JFXButton id="reg" fx:id="btn_reg" layoutX="581.0" layoutY="345.0" onAction="#registeremp" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: green;" text="Register an Employee" textFill="WHITE" underline="true" />
          </children>
          <effect>
             <DropShadow />

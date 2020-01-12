@@ -88,20 +88,20 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXTextField prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" />
+                  <JFXTextField fx:id="company_name" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" />
                   <Label prefHeight="35.0" prefWidth="207.0" text="Address" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXTextField layoutX="227.0" layoutY="20.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="address" layoutX="227.0" layoutY="20.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label prefHeight="35.0" prefWidth="223.0" text="Mobile No. " GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXTextField prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <JFXTextField layoutX="227.0" layoutY="74.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <JFXTextField fx:id="mobile_no" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="gst_no" layoutX="227.0" layoutY="74.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label layoutX="10.0" layoutY="141.0" prefHeight="35.0" prefWidth="223.0" text="GST No. " GridPane.rowIndex="3">
                      <font>
                         <Font name="System Bold" size="20.0" />
@@ -112,8 +112,8 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXDatePicker prefHeight="25.0" prefWidth="453.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <JFXTextField layoutX="227.0" layoutY="209.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <JFXDatePicker fx:id="despatch_date" prefHeight="25.0" prefWidth="453.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <JFXTextField fx:id="invoice_no" layoutX="227.0" layoutY="209.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label layoutX="10.0" layoutY="341.0" prefHeight="35.0" prefWidth="223.0" text="P.O. No." GridPane.rowIndex="7">
                      <font>
                         <Font name="System Bold" size="20.0" />
@@ -124,14 +124,14 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXTextField layoutX="227.0" layoutY="222.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <JFXTextField layoutX="227.0" layoutY="336.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <JFXTextField fx:id="po_no" layoutX="227.0" layoutY="222.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <JFXTextField fx:id="no_of_bags" layoutX="227.0" layoutY="336.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                   <Label prefHeight="35.0" prefWidth="223.0" text="Order Date" GridPane.rowIndex="5">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXDatePicker prefHeight="25.0" prefWidth="453.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <JFXDatePicker fx:id="order_date" prefHeight="25.0" prefWidth="453.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Label prefHeight="35.0" prefWidth="223.0" text="Despatch Date" GridPane.rowIndex="6">
                      <font>
                         <Font name="System Bold" size="20.0" />
@@ -142,7 +142,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXTextField layoutX="192.0" layoutY="532.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <JFXTextField fx:id="transport" layoutX="192.0" layoutY="532.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                </children>
             </GridPane>
             <GridPane layoutX="744.0" layoutY="35.0" prefHeight="650.0" prefWidth="581.0" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="47.0">
@@ -168,7 +168,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="130.0" prefHeight="35.0" prefWidth="223.0" text="Sub Amount" GridPane.rowIndex="5">
+                  <Label layoutX="10.0" layoutY="130.0" prefHeight="35.0" prefWidth="223.0" text="No. of Rolls" GridPane.rowIndex="4">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -193,7 +193,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="203.0" prefHeight="35.0" prefWidth="223.0" text="Rate/Roll" GridPane.rowIndex="4">
+                  <Label layoutX="10.0" layoutY="203.0" prefHeight="35.0" prefWidth="223.0" text="Rate/Roll" GridPane.rowIndex="5">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -213,24 +213,24 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXTextField prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" />
-                  <JFXTextField layoutX="197.0" layoutY="28.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <JFXTextField layoutX="197.0" layoutY="88.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <JFXTextField layoutX="197.0" layoutY="148.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <JFXTextField layoutX="197.0" layoutY="208.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <JFXTextField layoutX="197.0" layoutY="268.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <JFXTextField layoutX="197.0" layoutY="327.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <JFXTextField layoutX="197.0" layoutY="386.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <JFXTextField layoutX="197.0" layoutY="445.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <JFXTextField layoutX="197.0" layoutY="504.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <JFXTextField fx:id="product_name" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" />
+                  <JFXTextField fx:id="length" layoutX="197.0" layoutY="28.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="width" layoutX="197.0" layoutY="88.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="height" layoutX="197.0" layoutY="148.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <JFXTextField fx:id="no_rolls" layoutX="197.0" layoutY="208.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <JFXTextField fx:id="rate_roll" layoutX="197.0" layoutY="268.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <JFXTextField fx:id="packaging_amt" layoutX="197.0" layoutY="327.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <JFXTextField fx:id="sgst" layoutX="197.0" layoutY="386.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <JFXTextField fx:id="cgst" layoutX="197.0" layoutY="445.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <JFXTextField fx:id="igst" layoutX="197.0" layoutY="504.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                </children>
             </GridPane>
-            <JFXButton fx:id="btn_clearbill" buttonType="RAISED" layoutX="969.0" layoutY="680.0" prefHeight="44.0" prefWidth="154.0" text="Clear">
+            <JFXButton fx:id="btn_clearbill" buttonType="RAISED" layoutX="969.0" layoutY="680.0" onAction="#clearAll" prefHeight="44.0" prefWidth="154.0" text="CLEAR">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btn_printbill" buttonType="RAISED" layoutX="1157.0" layoutY="680.0" prefHeight="44.0" prefWidth="154.0" text="Print">
+            <JFXButton fx:id="btn_printbill" buttonType="RAISED" layoutX="1157.0" layoutY="680.0" onAction="#saveDetails" prefHeight="44.0" prefWidth="154.0" text="SAVE">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
