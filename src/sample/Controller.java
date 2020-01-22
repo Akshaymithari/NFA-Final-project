@@ -24,7 +24,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.stream.StreamSupport;
 
 public class Controller implements Initializable {
     @FXML
@@ -84,13 +91,33 @@ public class Controller implements Initializable {
 
     @FXML
     private LineChart<?, ?> product_rate;
+    @FXML
+    private JFXButton btn_home;
 
+    @FXML
+    private JFXButton btn_product;
+
+    @FXML
+    private JFXButton btn_emp;
+
+    @FXML
+    private JFXButton btn_billing;
+
+    @FXML
+    private JFXButton btn_about;
+
+    @FXML
+    private JFXButton btn_help;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initDrawer();
         piechart1();
-        barchar1();
+        try {
+            barchar1();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         custbar();
         linecahrt();
         //product_line();
@@ -110,7 +137,7 @@ public class Controller implements Initializable {
         }
 
     }
-    /*private void product_line() {
+  /*  private void product_line() {
 
         XYChart.Series set1=new XYChart.Series<>();
         set1.getData().add(new XYChart.Data("A",100) );
@@ -201,38 +228,46 @@ public class Controller implements Initializable {
 
     }
 
-    private void barchar1() {
+    private void barchar1() throws SQLException {
+        Date today = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(today);
+        int year = cal.get(Calendar.YEAR);
+        String ys=String.valueOf(year);
+        String ys2=String.valueOf(year-1);
+
         XYChart.Series set1=new XYChart.Series<>();
-        set1.getData().add(new XYChart.Data("Jan",100) );
-        set1.getData().add(new XYChart.Data("Feb",92) );
-        set1.getData().add(new XYChart.Data("Mar",10) );
-        set1.getData().add(new XYChart.Data("Apr",100) );
-        set1.getData().add(new XYChart.Data("May",69) );
-        set1.getData().add(new XYChart.Data("Jun",72) );
-        set1.getData().add(new XYChart.Data("Jul",80) );
-        set1.getData().add(new XYChart.Data("Aug",20) );
-        set1.getData().add(new XYChart.Data("Sept",10) );
-        set1.getData().add(new XYChart.Data("Oct",75) );
-        set1.getData().add(new XYChart.Data("Nov",65) );
-        set1.getData().add(new XYChart.Data("Dec",29) );
+        set1.getData().add(new XYChart.Data("Jan",testData(ys+"_01") ) );
+        set1.getData().add(new XYChart.Data("Feb",testData(ys+"_02")) );
+        set1.getData().add(new XYChart.Data("Mar",testData(ys+"_03")));
+        set1.getData().add(new XYChart.Data("Apr", testData(ys+"_04")));
+        set1.getData().add(new XYChart.Data("May",testData(ys+"_05"))) ;
+        set1.getData().add(new XYChart.Data("Jun",testData(ys+"_06")));
+        set1.getData().add(new XYChart.Data("Jul",testData(ys+"_07")) );
+        set1.getData().add(new XYChart.Data("Aug",testData(ys+"_08")) );
+        set1.getData().add(new XYChart.Data("Sept",testData(ys+"_09")) );
+        set1.getData().add(new XYChart.Data("Oct",testData(ys+"_10")) );
+        set1.getData().add(new XYChart.Data("Nov",testData(ys+"_11")) );
+        set1.getData().add(new XYChart.Data("Dec",testData(ys+"_12")) );
+        set1.setName(String.valueOf(year));
 
         XYChart.Series set2=new XYChart.Series<>();
-        set2.getData().add(new XYChart.Data("Jan",10) );
-        set2.getData().add(new XYChart.Data("Feb",30) );
-        set2.getData().add(new XYChart.Data("Mar",72) );
-        set2.getData().add(new XYChart.Data("Apr",10) );
-        set2.getData().add(new XYChart.Data("May",39) );
-        set2.getData().add(new XYChart.Data("Jun",75) );
-        set2.getData().add(new XYChart.Data("Jul",64) );
-        set2.getData().add(new XYChart.Data("Aug",99) );
-        set2.getData().add(new XYChart.Data("Sept",60) );
-        set2.getData().add(new XYChart.Data("Oct",85) );
-        set2.getData().add(new XYChart.Data("Nov",30) );
-        set2.getData().add(new XYChart.Data("Dec",25) );
-
+        set2.getData().add(new XYChart.Data("Jan",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Feb",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Mar",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Apr",testData(ys2+"_01")));
+        set2.getData().add(new XYChart.Data("May",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Jun",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Jul",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Aug",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Sept",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Oct",testData(ys2+"_01")));
+        set2.getData().add(new XYChart.Data("Nov",testData(ys2+"_01")) );
+        set2.getData().add(new XYChart.Data("Dec",testData(ys2+"_01")) );
+        set2.setName(String.valueOf(year-1));
         main_barchart.getData().addAll(set1,set2);
 
-
+        
     }
 
     private void piechart1() {
@@ -248,25 +283,68 @@ public class Controller implements Initializable {
     }
 
     private void initDrawer()  {
-        try {
-            VBox box=FXMLLoader.load(getClass().getResource("drawer.fxml"));
-            drawer.setSidePane(box);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         HamburgerSlideCloseTransition burgerTask = new HamburgerSlideCloseTransition(ham_menu);
         burgerTask.setRate(-1);
         ham_menu.addEventHandler(MouseEvent.MOUSE_CLICKED,(event) ->  {
             burgerTask.setRate(burgerTask.getRate()*-1);
                 burgerTask.play();
-                 if(drawer.isClosed()){
-                     drawer.open();
-                 }else{
-                     drawer.close();
-                 }
-
         });
     }
+    @FXML
+    void openProduct(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("product.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            ((Node)event.getSource()).getScene().getWindow().hide();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void openEmployee(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("employee.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            ((Node)event.getSource()).getScene().getWindow().hide();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void openBilling(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("billing.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            ((Node) event.getSource()).getScene().getWindow().hide();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-}
+    }
+    public float testData(String s) throws SQLException {
+        SqliteConnection sql = new SqliteConnection();
+        Connection con = sql.conn();
+        String qu = "select grand_total from orders_late where order_date like '"+s+"%'";
+        PreparedStatement ps = con.prepareStatement(qu);
+        ResultSet rs = ps.executeQuery();
+        float sum = 0;
+        while (rs.next()) {
+            float temp = Float.parseFloat(rs.getString(1));
+            sum = sum + temp;
+        }
+        return sum;
+    }
+    }
 

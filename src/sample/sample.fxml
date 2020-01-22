@@ -2,8 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
-<?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXNodesList?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXSpinner?>
@@ -30,55 +30,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <AnchorPane fx:id="topbar" layoutY="-4.0" prefHeight="100.0" prefWidth="1440.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-4.0">
-         <children>
-            <JFXButton fx:id="btn_logout" contentDisplay="GRAPHIC_ONLY" layoutX="1307.0" layoutY="-1.0" onAction="#logout" prefHeight="110.0" prefWidth="135.0" text="Button" textAlignment="RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-1.0">
-               <graphic>
-                  <ImageView fitHeight="80.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icon/shutdown_60px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <HBox layoutX="145.0" layoutY="24.0" prefHeight="66.0" prefWidth="324.0">
-               <children>
-                  <ImageView fx:id="admin_icon" fitHeight="66.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icon/administrator_male_48px.png" />
-                     </image>
-                  </ImageView>
-                  <VBox prefHeight="66.0" prefWidth="180.0">
-                     <children>
-                        <Label prefHeight="45.0" prefWidth="208.0" text="Admin">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="21.0" prefWidth="210.0" text="Designation">
-                           <font>
-                              <Font name="System Italic" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <JFXHamburger fx:id="ham_menu" layoutX="-10.0" layoutY="3.0" prefHeight="100.0" prefWidth="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.topAnchor="3.0" />
-         </children>
-      </AnchorPane>
       <ScrollPane cacheShape="false" centerShape="false" focusTraversable="false" hbarPolicy="NEVER" layoutY="96.0" pannable="true" prefHeight="800.0" prefWidth="1440.0" scaleShape="false" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="96.0">
          <content>
           <AnchorPane fx:id="main_pane" prefHeight="1890.0" prefWidth="1932.0">
                <children>
-                  <Pane fx:id="bar_pane" layoutX="292.0" layoutY="35.0" prefHeight="514.0" prefWidth="1086.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="554.0" AnchorPane.topAnchor="35.0">
+                  <Pane fx:id="bar_pane" focusTraversable="true" layoutX="103.0" layoutY="35.0" prefHeight="514.0" prefWidth="1258.0" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="571.0" AnchorPane.topAnchor="35.0">
                      <children>
                         <Label layoutX="39.0" layoutY="14.0" prefHeight="21.0" prefWidth="208.0" text="Monthly Anniversary ">
                            <font>
                               <Font name="Leelawadee UI Bold" size="20.0" />
                            </font>
                         </Label>
-                        <HBox layoutX="122.0" layoutY="53.0" prefHeight="21.0" prefWidth="208.0">
+                        <HBox layoutX="169.0" layoutY="52.0" prefHeight="30.0" prefWidth="119.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -95,7 +58,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <HBox layoutX="721.0" layoutY="52.0" prefHeight="30.0" prefWidth="162.0">
+                        <HBox layoutX="912.0" layoutY="53.0" prefHeight="30.0" prefWidth="151.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -112,7 +75,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <BarChart fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="50.0" layoutY="143.0" prefHeight="333.0" prefWidth="999.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                        <BarChart fx:id="main_barchart" alternativeRowFillVisible="false" barGap="5.0" categoryGap="15.0" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="50.0" layoutY="143.0" prefHeight="349.0" prefWidth="1163.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" fx:id="x" />
                           </xAxis>
@@ -120,18 +83,10 @@
                             <NumberAxis fx:id="y" side="LEFT" />
                           </yAxis>
                         </BarChart>
-                        <JFXSpinner fx:id="emp_pro" layoutX="247.0" layoutY="65.0" prefHeight="66.0" prefWidth="78.0" progress="0.84" />
-                        <JFXSpinner fx:id="br_pro" layoutX="852.0" layoutY="66.0" prefHeight="66.0" prefWidth="78.0" progress="0.64" />
+                        <JFXSpinner fx:id="emp_pro" layoutX="300.0" layoutY="60.0" prefHeight="80.0" prefWidth="100.0" progress="0.84" />
+                        <JFXSpinner fx:id="br_pro" layoutX="1065.0" layoutY="60.0" prefHeight="80.0" prefWidth="100.0" progress="0.64" />
                      </children>
                   </Pane>
-                  <VBox fx:id="drawerbox" prefHeight="565.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <JFXDrawer fx:id="drawer" defaultDrawerSize="220.0" overLayVisible="false" prefHeight="640.0" prefWidth="200.0" stylesheets="@style.css" />
-                     </children>
-                     <effect>
-                        <ColorAdjust />
-                     </effect>
-                  </VBox>
                   <HBox layoutX="594.0" layoutY="590.0" prefHeight="141.0" prefWidth="430.0" AnchorPane.bottomAnchor="1159.0" AnchorPane.rightAnchor="932.0">
                      <children>
                         <Pane fx:id="profit_pane" prefHeight="209.0" prefWidth="438.0">
@@ -738,6 +693,125 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </ScrollPane>
+      <AnchorPane fx:id="topbar" layoutY="-4.0" prefHeight="100.0" prefWidth="1440.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-4.0">
+         <children>
+            <JFXButton fx:id="btn_logout" contentDisplay="GRAPHIC_ONLY" layoutX="1333.0" layoutY="12.0" onAction="#logout" prefHeight="75.0" prefWidth="80.0" style="-fx-background-radius: 60;" text="Button" textAlignment="RIGHT" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="12.0">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/shutdown_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXNodesList alignment="CENTER_RIGHT" layoutX="10.0" prefHeight="100.0" prefWidth="160.0" spacing="10.0">
+               <children>
+                  <JFXHamburger fx:id="ham_menu" prefHeight="100.0" prefWidth="130.0" />
+                  <JFXButton fx:id="btn_home" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Home" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_pavilion_30px%201%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_product" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openProduct" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Product" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_procurement_30px%201.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_emp" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openEmployee" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Employee" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_hard_working_30px%201.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_billing" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openBilling" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Billing" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_request_money_30px%201.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_about" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="About Us" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_info_30px%201.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_help" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Help" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8_help_30px%201.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXNodesList>
+            <HBox layoutX="1125.0" layoutY="13.0" prefHeight="76.0" prefWidth="203.0">
+               <children>
+                  <ImageView fx:id="admin_icon" fitHeight="66.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/administrator_male_48px.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="66.0" prefWidth="180.0">
+                     <children>
+                        <Label prefHeight="45.0" prefWidth="208.0" text="Admin">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="21.0" prefWidth="210.0" text="Designation">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
    </children>
    <effect>
       <ColorAdjust />

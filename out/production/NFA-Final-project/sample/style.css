@@ -7,12 +7,8 @@
 #topbar{
 -fx-background-color:#FCF9F9;
 }
-#drawer{
--fx-background-color:transparent;
--fx-background-radius: 0 10 10 0;
-}
 #btn_home:hover{
--fx-background-color:#FCF9F9;
+-fx-background-color:linear-gradient(to bottom left,#b327d6,pink);
 }
 #btn_product:hover{
 -fx-background-color:#FCF9F9;

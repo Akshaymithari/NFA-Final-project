@@ -32,7 +32,6 @@ public class drawerController {
 
     @FXML
     private JFXButton btn_help;
-
     @FXML
     void openProduct(ActionEvent event) {
         try {

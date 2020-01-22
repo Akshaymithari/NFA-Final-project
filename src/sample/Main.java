@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.lang.Exception;
 import java.lang.Override;
 import java.lang.String;
@@ -13,16 +14,19 @@ import java.lang.String;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) throws IOException {
+
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        }catch (IOException e){
+
         }
+
 
     }
         public static void main(String[] args) {

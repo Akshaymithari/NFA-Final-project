@@ -158,27 +158,27 @@
                   </Label>
                   <VBox layoutX="482.0" layoutY="230.0" prefHeight="250.0" prefWidth="110.0">
                      <children>
-                        <JFXTextField editable="false" prefHeight="45.0" prefWidth="96.0">
+                        <JFXTextField prefHeight="45.0" prefWidth="96.0">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField editable="false" prefHeight="45.0" prefWidth="96.0">
+                        <JFXTextField prefHeight="45.0" prefWidth="96.0">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField editable="false" prefHeight="45.0" prefWidth="96.0">
+                        <JFXTextField prefHeight="45.0" prefWidth="96.0">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField editable="false" prefHeight="45.0" prefWidth="96.0">
+                        <JFXTextField prefHeight="45.0" prefWidth="96.0">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField editable="false" prefHeight="45.0" prefWidth="96.0">
+                        <JFXTextField prefHeight="45.0" prefWidth="96.0">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
