@@ -28,7 +28,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <ScrollPane cacheShape="false" centerShape="false" focusTraversable="false" hbarPolicy="NEVER" layoutY="96.0" pannable="true" prefHeight="800.0" prefWidth="1440.0" scaleShape="false" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="96.0">
          <content>
@@ -87,7 +87,7 @@
                         <JFXSpinner fx:id="br_pro" layoutX="1065.0" layoutY="60.0" prefHeight="80.0" prefWidth="100.0" progress="0.64" />
                      </children>
                   </Pane>
-                  <HBox layoutX="594.0" layoutY="590.0" prefHeight="141.0" prefWidth="430.0" AnchorPane.bottomAnchor="1159.0" AnchorPane.rightAnchor="932.0">
+                  <HBox layoutX="594.0" layoutY="590.0" prefHeight="140.0" prefWidth="430.0" AnchorPane.bottomAnchor="1135.0" AnchorPane.rightAnchor="932.0">
                      <children>
                         <Pane fx:id="profit_pane" prefHeight="209.0" prefWidth="438.0">
                            <effect>
@@ -111,9 +111,9 @@
                                     </Label>
                                  </children>
                               </HBox>
-                              <ProgressIndicator fx:id="pro_in1" layoutX="50.0" layoutY="58.0" prefHeight="80.0" prefWidth="93.0" progress="0.39" />
-                              <ProgressIndicator fx:id="pro_in2" layoutX="269.0" layoutY="58.0" prefHeight="66.0" prefWidth="79.0" progress="0.57" />
-                              <VBox layoutX="129.0" layoutY="66.0" prefHeight="66.0" prefWidth="85.0">
+                              <ProgressIndicator fx:id="pro_in1" layoutX="50.0" layoutY="50.0" prefHeight="75.0" prefWidth="80.0" progress="0.39" />
+                              <ProgressIndicator fx:id="pro_in2" layoutX="270.0" layoutY="50.0" prefHeight="75.0" prefWidth="80.0" progress="0.57" />
+                              <VBox layoutX="129.0" layoutY="66.0" prefHeight="34.0" prefWidth="85.0">
                                  <children>
                                     <Label prefHeight="44.0" prefWidth="85.0" text="\$11K">
                                        <font>
@@ -123,7 +123,7 @@
                                           <Insets left="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="86.0" text="2019">
+                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="75.0" text="2019">
                                        <VBox.margin>
                                           <Insets left="10.0" />
                                        </VBox.margin>
@@ -707,7 +707,7 @@
             <JFXNodesList alignment="CENTER_RIGHT" layoutX="10.0" prefHeight="100.0" prefWidth="160.0" spacing="10.0">
                <children>
                   <JFXHamburger fx:id="ham_menu" prefHeight="100.0" prefWidth="130.0" />
-                  <JFXButton fx:id="btn_home" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Home" textAlignment="CENTER">
+                  <JFXButton fx:id="btn_home" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="90.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Home" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -722,7 +722,7 @@
                         <Insets bottom="10.0" />
                      </opaqueInsets>
                   </JFXButton>
-                  <JFXButton fx:id="btn_product" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openProduct" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Product" textAlignment="CENTER">
+                  <JFXButton fx:id="btn_product" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openProduct" prefHeight="90.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Product" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -734,7 +734,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btn_emp" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openEmployee" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Employee" textAlignment="CENTER">
+                  <JFXButton fx:id="btn_emp" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openEmployee" prefHeight="90.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Employee" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -746,7 +746,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btn_billing" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openBilling" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Billing" textAlignment="CENTER">
+                  <JFXButton fx:id="btn_billing" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" onAction="#openBilling" prefHeight="90.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Billing" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -758,7 +758,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btn_about" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="About Us" textAlignment="CENTER">
+                  <JFXButton fx:id="btn_about" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="90.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="About Us" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -770,7 +770,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btn_help" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Help" textAlignment="CENTER">
+                  <JFXButton fx:id="btn_help" alignment="CENTER" buttonType="RAISED" layoutX="20.0" layoutY="10.0" prefHeight="90.0" prefWidth="200.0" ripplerFill="#33ebeb" style="-fx-background-color: white; -fx-background-radius: 5;" text="Help" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
