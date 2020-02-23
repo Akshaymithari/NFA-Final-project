@@ -94,7 +94,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="address" layoutX="227.0" layoutY="20.0" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <JFXTextField fx:id="address" layoutX="227.0" layoutY="20.0" onKeyTyped="#ComboSetItems" prefHeight="25.0" prefWidth="408.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font></JFXTextField>
@@ -164,7 +164,7 @@
                      <font>
                         <Font size="18.0" />
                      </font></JFXTextField>
-                  <JFXComboBox editable="true" prefHeight="31.0" prefWidth="339.0" GridPane.columnIndex="1" />
+                  <JFXComboBox fx:id="comb_company_name" editable="true" onAction="#ComboSetItems" prefHeight="31.0" prefWidth="339.0" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <GridPane layoutX="744.0" layoutY="35.0" prefHeight="650.0" prefWidth="581.0" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="47.0">
@@ -271,7 +271,7 @@
                      <font>
                         <Font size="18.0" />
                      </font></JFXTextField>
-                  <JFXComboBox editable="true" prefHeight="31.0" prefWidth="487.0" GridPane.columnIndex="1" />
+                  <JFXComboBox fx:id="product_name" editable="true" prefHeight="31.0" prefWidth="487.0" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <JFXButton fx:id="btn_clearbill" buttonType="RAISED" layoutX="969.0" layoutY="680.0" onAction="#clearAll" prefHeight="44.0" prefWidth="154.0" text="CLEAR">

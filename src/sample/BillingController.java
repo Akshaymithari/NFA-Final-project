@@ -1,16 +1,21 @@
 package sample;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import com.sun.org.apache.xerces.internal.xs.ItemPSVI;
 import com.sun.xml.internal.ws.api.addressing.WSEndpointReference;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -33,7 +38,7 @@ public class BillingController {
     private AnchorPane billing_tab;
 
     @FXML
-    private JFXTextField company_name;
+    private JFXComboBox<String> comb_company_name;
 
     @FXML
     private JFXTextField address;
@@ -63,7 +68,7 @@ public class BillingController {
     private JFXTextField transport;
 
     @FXML
-    private JFXTextField product_name;
+    private JFXComboBox<String> product_name;
 
     @FXML
     private JFXTextField length;
@@ -140,7 +145,7 @@ public class BillingController {
                 float cgs = Float.parseFloat(cgst.getText());
                 float igs = Float.parseFloat(igst.getText());
                 float grand = price + pck + ((price + pck) * sgs / 100) + ((price + pck) * cgs / 100) + ((price + pck) * igs / 100);
-                ps.setString(1, company_name.getText());
+                ps.setString(1, comb_company_name.getSelectionModel().getSelectedItem().toString());
                 ps.setString(2, address.getText());
                 ps.setString(3, mobile_no.getText());
                 ps.setString(4, order_date.getValue().toString());
@@ -148,7 +153,7 @@ public class BillingController {
                 ps.setString(6, po_no.getText());
                 ps.setString(7, transport.getText());
                 ps.setString(8, gst_no.getText());
-                ps.setString(9, product_name.getText());
+                ps.setString(9, product_name.getSelectionModel().getSelectedItem().toString());
                 ps.setString(10, length.getText());
                 ps.setString(11, width.getText());
                 ps.setString(12, height.getText());
@@ -201,8 +206,41 @@ public class BillingController {
         while (rs.next()) {
         sum=sum+Float.parseFloat(rs.getString(1));
         }
+        rs.close();
+        con.close();
         return sum;
     }
 
+    @FXML
+    public void ComboSetItems () throws SQLException {
+
+        ObservableList<String> ob= FXCollections.observableArrayList();
+
+        SqliteConnection sql=new SqliteConnection();
+        Connection con=sql.conn();
+        String s=comb_company_name.getEditor().getText();
+        if(s==null) {
+            s="";
+        }
+        String qu="select company_name from orders_late where company_name like '"+s+"%'";
+        ResultSet rs= null;
+        try {
+            PreparedStatement ps=con.prepareStatement(qu);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                comb_company_name.getItems().add(rs.getString(1));
+            }
+            // System.out.println(rs.getString(1));
+            con.close();
+            rs.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //comb_company_name.getItems().add(rs.getString(1));
+        comb_company_name.show();
     }
+
+    }
+
+
 
