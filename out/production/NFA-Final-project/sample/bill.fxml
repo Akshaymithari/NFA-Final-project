@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="795.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Bill">
+   <children>
+      <Pane layoutX="10.0" layoutY="23.0" prefHeight="758.0" prefWidth="586.0" style="-fx-border-color: black;">
+         <children>
+            <Pane fx:id="title_pane" prefHeight="162.0" prefWidth="336.0" stylesheets="@style.css">
+               <children>
+                  <Label graphicTextGap="5.0" layoutX="96.0" layoutY="14.0" text="SM INTERNATIONAL">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="35.0" prefHeight="31.0" prefWidth="329.0" text="685/4 Salokhe Nagar - Gondkar Mala Amrai Road, Ichalkaranji 416115 ">
+                     <font>
+                        <Font size="10.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="55.0" prefHeight="23.0" prefWidth="183.0" text=" Tal-Hatkanangale, Dist-Kolhapur(MS)">
+                     <font>
+                        <Font size="10.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="106.0" layoutY="81.0" prefHeight="21.0" prefWidth="124.0" text="Contact No. 9561838411">
+                     <font>
+                        <Font size="10.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="73.0" layoutY="102.0" prefHeight="16.0" prefWidth="191.0" text="Email ID : sm.internationalnf@gmail.com">
+                     <font>
+                        <Font size="10.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="68.0" layoutY="120.0" prefHeight="23.0" prefWidth="200.0" text=" GST No. 27CYFPM2207Q1Z1 " />
+               </children>
+            </Pane>
+            <Pane layoutX="268.0" layoutY="162.0" prefHeight="129.0" prefWidth="318.0" style="-fx-border-color: black;">
+               <children>
+                  <Label layoutX="3.0" layoutY="4.0" prefHeight="30.0" prefWidth="92.0" text="CONSIGNER :-">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="87.0" prefHeight="30.0" prefWidth="59.0" text="GST No." />
+                  <Label layoutX="102.0" layoutY="9.0" prefHeight="21.0" prefWidth="170.0" text="Mithari Textiles" />
+                  <Label layoutX="2.0" layoutY="34.0" prefHeight="31.0" prefWidth="177.0" text="Teen Bati Char Road">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="2.0" layoutY="56.0" prefHeight="31.0" prefWidth="177.0" text="Ichalkaranji">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="92.0" prefHeight="21.0" prefWidth="161.0" text="33DFS5FGOI1354" />
+               </children>
+            </Pane>
+            <Pane layoutX="336.0" prefHeight="162.0" prefWidth="250.0" style="-fx-border-color: black;">
+               <children>
+                  <Label layoutX="5.0" layoutY="4.0" prefHeight="21.0" prefWidth="147.0" text="Bank Account Details :-">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="6.0" layoutY="36.0" prefHeight="21.0" prefWidth="170.0" text="ICICI Bank  " />
+                  <Label layoutX="5.0" layoutY="57.0" prefHeight="21.0" prefWidth="170.0" text="Main Branch Ichalkaranji" />
+                  <Label layoutX="6.0" layoutY="89.0" prefHeight="21.0" prefWidth="170.0" text="A/C No.  335705500712" />
+                  <Label layoutX="5.0" layoutY="110.0" prefHeight="21.0" prefWidth="170.0" text="IFSC No.  ICIC0006357" />
+               </children>
+            </Pane>
+            <Pane layoutY="162.0" prefHeight="129.0" prefWidth="268.0" style="-fx-border-color: black;">
+               <children>
+                  <VBox layoutX="3.0" layoutY="14.0" prefHeight="105.0" prefWidth="84.0">
+                     <children>
+                        <Label prefHeight="16.0" prefWidth="59.0" text="INV No." />
+                        <Label prefHeight="21.0" prefWidth="39.0" text="Date" />
+                        <Label text="Transport" />
+                        <Label text="P.O. No." />
+                        <Label text="No. of Bags" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="119.0" layoutY="14.0" prefHeight="105.0" prefWidth="114.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="130.0" text="6416165962" />
+                        <Label prefHeight="21.0" prefWidth="84.0" text="Aug 3 2019" />
+                        <Label text="pvt" />
+                        <Label text="verble" />
+                        <Label text="2" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </Pane>
+            <JFXTreeTableView layoutY="291.0" prefHeight="242.0" prefWidth="586.0" style="-fx-border-color: black;">
+               <columns>
+                  <TreeTableColumn prefWidth="35.0" text="Sr. &#10;No." />
+                  <TreeTableColumn prefWidth="81.0" text="HSN Code" />
+                  <TreeTableColumn prefWidth="110.0" text="Material Desc." />
+                  <TreeTableColumn prefWidth="71.0" text="Quantity" />
+                  <TreeTableColumn prefWidth="82.0" text="Rate/Rolls" />
+                  <TreeTableColumn prefWidth="46.0" text="SGST" />
+                  <TreeTableColumn prefWidth="47.0" text="CGST" />
+                  <TreeTableColumn prefWidth="42.0" text="IGST" />
+                  <TreeTableColumn prefWidth="70.0" text="Amount" />
+               </columns>
+            </JFXTreeTableView>
+            <Pane layoutY="533.0" prefHeight="151.0" prefWidth="310.0" style="-fx-border-color: black;">
+               <children>
+                  <Label layoutX="7.0" layoutY="4.0" prefHeight="21.0" prefWidth="147.0" text="Terms &amp; Conditions :-" />
+                  <VBox layoutY="25.0" prefHeight="126.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="297.0" text="1.  Goods once sold will not be taken back.">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="42.0" prefWidth="295.0" text="2.  Our reponsibility ceases as soon as the goods &#10;     leaves our premises.">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="21.0" prefWidth="293.0" text="3.  Subject to Ichalkaranji Jurisdiction.">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="42.0" prefWidth="292.0" text="4.  Payment within due date otherwise 24%p.a. interest&#10;     will be chargerd.">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </Pane>
+            <Label layoutX="309.0" layoutY="533.0" prefHeight="64.0" prefWidth="109.0" style="-fx-border-color: black;" text="Sub Amount&#10;Packing &amp;&#10;Forwarding">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="416.0" layoutY="533.0" prefHeight="64.0" prefWidth="170.0" style="-fx-border-color: black;" text="12000&#10;100">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label layoutX="309.0" layoutY="597.0" prefHeight="42.0" prefWidth="109.0" style="-fx-border-color: black;" text="Round Off">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="416.0" layoutY="597.0" prefHeight="42.0" prefWidth="170.0" style="-fx-border-color: black;" text="00">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="310.0" layoutY="638.0" prefHeight="46.0" prefWidth="107.0" style="-fx-border-color: black;" text="Grand Amount">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="417.0" layoutY="639.0" prefHeight="45.0" prefWidth="169.0" style="-fx-border-color: black;" text="12000">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Pane layoutY="684.0" prefHeight="74.0" prefWidth="310.0" style="-fx-border-color: black;">
+               <children>
+                  <Label layoutX="12.0" layoutY="4.0" prefHeight="21.0" prefWidth="169.0" text="Total Amount in words :" />
+                  <Label layoutX="15.0" layoutY="25.0" prefHeight="21.0" prefWidth="297.0" text="Twelve Thousands " />
+               </children>
+            </Pane>
+            <Label layoutX="310.0" layoutY="684.0" prefHeight="74.0" prefWidth="276.0" style="-fx-border-color: black;" text="For SM International&#10;&#10;Proprietor">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
