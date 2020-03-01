@@ -64,7 +64,7 @@ public class productController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         SqliteConnection co=new SqliteConnection();
         Connection conn = co.conn();
-        System.out.println(conn);
+
         productLine();
     }
 

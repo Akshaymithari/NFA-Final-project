@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NFA-Final-project.iml" filepath="$PROJECT_DIR$/NFA-Final-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/fontcheck/fontcheck.iml" filepath="$PROJECT_DIR$/fontcheck/fontcheck.iml" />
     </modules>
   </component>
 </project>

@@ -17,14 +17,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("billing.fxml"));
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();
 
         }catch (IOException e){
-
+                e.printStackTrace();
         }
 
 

@@ -12,21 +12,26 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import sun.misc.Regexp;
 
+import javax.xml.stream.EventFilter;
 import java.io.InputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.*;
 import java.util.Calendar;
+import java.util.ResourceBundle;
 
-public class BillingController {
+public class BillingController implements Initializable {
 
     @FXML
     private AnchorPane billing_pane;
@@ -89,6 +94,9 @@ public class BillingController {
     private JFXTextField packaging_amt;
 
     @FXML
+    private JFXButton nexttoprint;
+
+    @FXML
     private JFXTextField sgst;
 
     @FXML
@@ -102,6 +110,9 @@ public class BillingController {
 
     @FXML
     private JFXButton btn_printbill;
+
+    @FXML
+    private JFXTextField hsn_code;
 
     @FXML
     void backBilling(ActionEvent event) {
@@ -121,8 +132,8 @@ public class BillingController {
 
     @FXML
     void clearAll(ActionEvent event) throws SQLException {
-        float f=productChart("cotton");
-        System.out.println(f);
+
+
     }
 
     @FXML
@@ -133,10 +144,8 @@ public class BillingController {
             DatabaseMetaData dbm = co.getMetaData();
             ResultSet rm = dbm.getTables(null, null, "orders_late", null);
             if (rm.next()) {
-                String query = "Insert into orders_late(company_name,address,mobile_no,order_date,despatch_date,po_no,transport,gst_no,product_name,length,width,height,cgst,sgst,igst,no_of_rolls,rate_per_roll_or_unit,no_of_bags,sub_amount,packaging_price,round_off,grand_totaL,amount_in_words)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
+                String query = "Insert into orders_late(company_name,address,mobile_no,order_date,despatch_date,po_no,transport,gst_no,product_name,length,width,height,cgst,sgst,igst,no_of_rolls,rate_per_roll_or_unit,no_of_bags,sub_amount,packaging_price,round_off,grand_totaL,amount_in_words,inv_no,hsn_code)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement ps = co.prepareStatement(query);
-
                 float rate = Integer.parseInt(rate_roll.getText());
                 float qty = Integer.parseInt(no_rolls.getText());
                 float price = rate * qty;
@@ -168,6 +177,8 @@ public class BillingController {
                 ps.setString(21, String.valueOf(grand));
                 ps.setString(22, String.valueOf(grand));
                 ps.setString(23, String.valueOf(grand));
+                ps.setString(24,invoice_no.getText());
+                ps.setString(25,hsn_code.getText());
                 int rs = ps.executeUpdate();
                 System.out.println("Details Saved: " + rs);
                 //String s="drop table orders";
@@ -185,7 +196,7 @@ public class BillingController {
                     //System.out.print(res.getString(5)+" ");
                 }
             } else {
-                String s = " create table orders_late(inv_no INTEGER PRIMARY KEY, company_name TEXT, ADDRESS TEXT, mobile_no VARCHAR(12),order_date TEXT,despatch_date TEXT, po_no TEXT,transport TEXT,gst_no TEXT, product_name TEXT,length TEXT,width TEXT,height TEXT, cgst REAL, sgst REAL, igst REAL,no_of_rolls TEXT, rate_per_roll_or_unit TEXT,no_of_bags TEXT,sub_amount TEXT,packaging_price TEXT, ROUND_OFF TEXT, GRAND_TOTAL TEXT, AMOUNT_IN_WORDS TEXT)";
+                String s = " create table orders_late(inv_no Text, company_name TEXT, ADDRESS TEXT, mobile_no VARCHAR(12),order_date TEXT,despatch_date TEXT, po_no TEXT,transport TEXT,gst_no TEXT, product_name TEXT,HSN_CODE text,length TEXT,width TEXT,height TEXT, cgst REAL, sgst REAL, igst REAL,no_of_rolls TEXT, rate_per_roll_or_unit TEXT,no_of_bags TEXT,sub_amount TEXT,packaging_price TEXT, ROUND_OFF TEXT, GRAND_TOTAL TEXT, AMOUNT_IN_WORDS TEXT)";
                 PreparedStatement ps = co.prepareStatement(s);
                 boolean rs = ps.execute();
                 System.out.println("Created Table");
@@ -193,18 +204,22 @@ public class BillingController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        finally {
+            co.close();
+        }
+        newPoduct();
     }
 
     public float productChart(String s) throws SQLException {
-        SqliteConnection sql=new SqliteConnection();
-        Connection con=sql.conn();
-        String qu="select grand_total from orders_late where product_name=?";
-        PreparedStatement ps=con.prepareStatement(qu);
-        ps.setString(1,s);
-        ResultSet rs=ps.executeQuery();
-        float sum=0;
+        SqliteConnection sql = new SqliteConnection();
+        Connection con = sql.conn();
+        String qu = "select grand_total from orders_late where product_name=?";
+        PreparedStatement ps = con.prepareStatement(qu);
+        ps.setString(1, s);
+        ResultSet rs = ps.executeQuery();
+        float sum = 0;
         while (rs.next()) {
-        sum=sum+Float.parseFloat(rs.getString(1));
+            sum = sum + Float.parseFloat(rs.getString(1));
         }
         rs.close();
         con.close();
@@ -212,8 +227,13 @@ public class BillingController {
     }
 
     @FXML
-    public void ComboSetItems () throws SQLException {
+    public void ComboSetItems() throws SQLException {
 
+
+    }
+
+    /*@FXML
+    void setItem(ActionEvent event) {
         ObservableList<String> ob= FXCollections.observableArrayList();
 
         SqliteConnection sql=new SqliteConnection();
@@ -222,7 +242,7 @@ public class BillingController {
         if(s==null) {
             s="";
         }
-        String qu="select company_name from orders_late where company_name like '"+s+"%'";
+        String qu="select Name from product where company_name like '"+s+"%'";
         ResultSet rs= null;
         try {
             PreparedStatement ps=con.prepareStatement(qu);
@@ -239,8 +259,112 @@ public class BillingController {
         //comb_company_name.getItems().add(rs.getString(1));
         comb_company_name.show();
     }
+*/
+    @FXML
+    void nexttobill(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("bill.fxml"));
+            Parent root = loader.load();
+            //Get controller of scene2
+            billprint bc = loader.getController();
+            //Pass whatever data you want. You can have multiple method calls here
+            //Show scene 2 in new window
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Bill");
+            stage.show();
+            ((Node)event.getSource()).getScene().getWindow().hide();
 
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
+    public void newPoduct() {
+        no_of_bags.clear();
+        product_name.getItems().clear();
+        product_name.getEditor().clear();
+        length.clear();
+        width.clear();
+        height.clear();
+        no_rolls.clear();
+        rate_roll.clear();
+        packaging_amt.clear();
+        hsn_code.clear();
+        cgst.clear();
+        igst.clear();
+        sgst.clear();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        comb_company_name.addEventFilter(KeyEvent.KEY_TYPED, ke);
+        comb_company_name.addEventFilter(MouseEvent.MOUSE_CLICKED, me);
+    }
+
+    EventHandler<KeyEvent> ke = new EventHandler<KeyEvent>() {
+        @Override
+        public void handle(KeyEvent event) {
+            ObservableList<String> ob = FXCollections.observableArrayList();
+            comb_company_name.getItems().clear();
+            SqliteConnection sql = new SqliteConnection();
+            Connection con = sql.conn();
+            String s = comb_company_name.getEditor().getText();
+            if (s == null) {
+                s = "";
+            }
+            String qu = "select company_name from orders_late where company_name like '" + s + "%'";
+            ResultSet rs = null;
+            try {
+                PreparedStatement ps = con.prepareStatement(qu);
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    comb_company_name.getItems().add(rs.getString("company_name"));
+                }
+                // System.out.println(rs.getString(1));
+                con.close();
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            //comb_company_name.getItems().add(rs.getString(1));
+            comb_company_name.show();
+        }
+    };
+
+    EventHandler<MouseEvent> me = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            String s = comb_company_name.getSelectionModel().getSelectedItem();
+            SqliteConnection sql = new SqliteConnection();
+            Connection con = sql.conn();
+            String qu = "select * from orders_late where company_name like '" + s + "%'";
+            ResultSet rs = null;
+            try {
+                PreparedStatement ps = con.prepareStatement(qu);
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    address.setText(rs.getString("address"));
+                    mobile_no.setText(rs.getString("mobile_no"));
+                    gst_no.setText(rs.getString("gst_no"));
+                    order_date.getEditor().setText(rs.getString("order_date"));
+                    despatch_date.getEditor().setText(rs.getString("despatch_date"));
+                    po_no.setText(rs.getString("po_no"));
+                }
+                // System.out.println(rs.getString(1));
+                con.close();
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+
+
+}
 
 
 
