@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("billing.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("annual_bill.fxml"));
             Scene scene = new Scene(root);
             //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             primaryStage.setScene(scene);
